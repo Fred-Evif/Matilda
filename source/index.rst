@@ -15,9 +15,9 @@ Welcome to Matilda!
    main
    model
    function
-   tutorial
    train
    predict
+   tutorial
 
 Indices and tables
 ==================
