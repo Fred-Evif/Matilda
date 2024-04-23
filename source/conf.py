@@ -16,6 +16,7 @@ print("Current working directory:", os.getcwd())
 print("Python executable:", sys.executable)
 print("sys.path:", sys.path)
 
+source_suffix = ['.rst', '.md']  # Handling both reStructuredText and Markdown
 
 sys.path.insert(0, os.path.abspath('../main/learn'))
 sys.path.insert(0, os.path.abspath('../main'))
@@ -46,8 +47,16 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.extlinks",
     "sphinx.ext.autosummary",
-    'recommonmark',
-    'sphinx_markdown_tables'
+]
+myst_enable_extensions = [
+    "dollarmath",  # Allows $ signs to be used for math
+    "amsmath",     # Advanced math extensions
+    "deflist",     # Definition lists
+    "html_image",  # Image handling
+    "colon_fence", # Extended syntax for code blocks
+    "smartquotes", # Convert quotes and dashes to typographically correct entities
+    "replacements", # Text replacement
+    "linkify",     # Auto-convert URLs into links
 ]
 
 
