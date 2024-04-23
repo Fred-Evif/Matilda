@@ -13,7 +13,11 @@ Welcome to Matilda!
    :maxdepth: 2
 
    Main
+   Model
+   Function
    Tutorial
+   Train
+   Predict
 
 Indices and tables
 ==================
@@ -21,3 +25,18 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
