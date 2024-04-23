@@ -1,6 +1,6 @@
 Learn
 =====
-.. mdinclude:: README.md
+.. mdinclude:: README
 
 
 
