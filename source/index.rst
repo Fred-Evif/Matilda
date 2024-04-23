@@ -12,8 +12,12 @@ Welcome to Matilda!
 .. toctree::
    :maxdepth: 2
 
-   Main
-   Tutorial
+   main
+   model
+   function
+   tutorial
+   train
+   predict
 
 Indices and tables
 ==================
