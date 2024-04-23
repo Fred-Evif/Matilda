@@ -1,4 +1,4 @@
-model Module
+Model
 ===============
 
 .. automodule:: model
