@@ -45,7 +45,6 @@ extensions = [
     "sphinx.ext.linkcode",
     "sphinx.ext.mathjax",
     "sphinx.ext.napoleon",
-    "sphinx_autodoc_typehints",  # needs to be after napoleon
     "sphinx.ext.extlinks",
     "sphinx.ext.autosummary",
     "sphinxcontrib.bibtex",
