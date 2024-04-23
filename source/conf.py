@@ -49,7 +49,6 @@ extensions = [
     "sphinx.ext.extlinks",
     "sphinx.ext.autosummary",
     "sphinxcontrib.bibtex",
-    *[p.stem for p in (HERE / "extensions").glob("*.py")],
     "sphinx_copybutton",
     "sphinx_design",
     "sphinxext.opengraph",
