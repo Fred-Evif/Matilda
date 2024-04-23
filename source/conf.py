@@ -47,7 +47,6 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.extlinks",
     "sphinx.ext.autosummary",
-    "hoverxref.extension",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
