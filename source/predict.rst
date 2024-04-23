@@ -1,4 +1,4 @@
-predict Module
+Predict 
 ===============
 
 .. automodule:: predict
