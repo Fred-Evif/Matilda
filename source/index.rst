@@ -13,6 +13,8 @@ Welcome to Matilda!
 .. toctree::
    :maxdepth: 2
 
+
+   installation
    main
    model
    function
