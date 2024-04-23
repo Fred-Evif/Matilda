@@ -44,6 +44,17 @@ extensions = [
     'myst_parser'
 ]
 
+myst_enable_extensions = [
+    "dollarmath",
+    "amsmath",
+    "deflist",
+    "html_image",
+    "colon_fence",
+    "smartquotes",
+    "replacements",
+    "linkify",
+    "substitution"
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
