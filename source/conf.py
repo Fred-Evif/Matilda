@@ -47,7 +47,6 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.extlinks",
     "sphinx.ext.autosummary",
-    "sphinxext.opengraph",
     "hoverxref.extension",
 ]
 
