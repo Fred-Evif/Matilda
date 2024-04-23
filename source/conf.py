@@ -41,8 +41,7 @@ release = '1.0.0'
 extensions = [
     "myst_parser",
     "sphinx.ext.autodoc",
-    "sphinx.ext.intersphinx",
-    "sphinx.ext.linkcode",
+    "sphinx.ext.intersphinx"
     "sphinx.ext.mathjax",
     "sphinx.ext.napoleon",
     "sphinx.ext.extlinks",
