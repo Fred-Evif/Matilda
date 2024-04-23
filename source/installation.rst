@@ -1,8 +1,5 @@
 Installation
 ========================================
-#.. mdinclude:: README.md
-
-
 
 
 .. toctree::
