@@ -1,4 +1,4 @@
-train Module
+Train
 ===============
 
 .. automodule:: train
