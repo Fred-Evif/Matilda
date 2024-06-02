@@ -6,7 +6,8 @@
 Welcome to Matilda!
 ========================================
 
-.. mdinclude:: README.md
+.. include:: README.md
+   :parser: recommonmark.parser.CommonMarkParser
    
 
 
