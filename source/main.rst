@@ -3,7 +3,7 @@ Learn
 
 
 .. include:: README.md
-   :parser: recommonmark.parser.CommonMarkParser
+
 
 
 
