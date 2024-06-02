@@ -1,14 +1,12 @@
 Welcome to Matilda!
 ========================================
 
-.. include:: .md
 
-   
-
+.. include:: README.md
+   :relative-docs:
 
 .. toctree::
    :maxdepth: 2
-
 
    installation
    main
@@ -24,3 +22,4 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
