@@ -1,9 +1,6 @@
 Welcome to Matilda!
 ========================================
 
-
-
-
 :doc:`README`
 
 .. toctree::
