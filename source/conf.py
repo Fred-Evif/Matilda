@@ -50,16 +50,18 @@ extensions = [
     "sphinx.ext.autosummary",
 ]
 myst_enable_extensions = [
-    "dollarmath",  # Allows $ signs to be used for math
-    "amsmath",     # Advanced math extensions
-    "deflist",     # Definition lists
-    "html_image",  # Image handling
-    "colon_fence", # Extended syntax for code blocks
-    "smartquotes", # Convert quotes and dashes to typographically correct entities
-    "replacements", # Text replacement
-    "linkify",     # Auto-convert URLs into links
+    "dollarmath",
+    "amsmath",
+    "deflist",
+    "html_admonition",
+    "html_image",
+    "colon_fence",
+    "smartquotes",
+    "replacements",
+    "linkify",
+    "strikethrough",
+    "tasklist",
 ]
-
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
