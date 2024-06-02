@@ -7,7 +7,7 @@ Welcome to Matilda!
 ========================================
 
 .. include:: README.md
-   :parser: myst_parser
+
    
 
 
