@@ -1,11 +1,8 @@
-
-
 Welcome to Matilda!
 ========================================
 
 .. include:: README.md
    
-
 
 
 .. toctree::
