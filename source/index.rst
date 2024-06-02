@@ -7,7 +7,6 @@ Welcome to Matilda!
 ========================================
 
 .. include:: README.md
-   :parser: recommonmark.parser.CommonMarkParser
    
 
 
