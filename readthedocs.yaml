@@ -6,7 +6,7 @@ build:
     python: "3.8"
   jobs:
     pre_build:
-      - pip install -r docs/requirements.txt
+      - pip install -r requirements.txt
 
 sphinx:
   configuration: source/conf.py
