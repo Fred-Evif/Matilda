@@ -40,6 +40,7 @@ release = '1.0.0'
 # ones.
 # Here, the autodoc allows Sphinx to automatically generate documentation from docstrings, napoleon allows Sphinx to parse Google-style docstrings, and myst_parser allows Sphinx to parse Markdown files.
 extensions = [
+    'recommonmark',
     "myst_parser",
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
@@ -58,7 +59,10 @@ myst_enable_extensions = [
     "replacements", # Text replacement
     "linkify",     # Auto-convert URLs into links
 ]
-
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
