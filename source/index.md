@@ -3,27 +3,14 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-# Welcome to Matilda!
+Welcome to Matilda!
+========================================
 
-```{include} README.md
-
-{toctree}
-:maxdepth: 2
-
-installation
-main
-model
-function
-train
-predict
-tutorial
-
-   
-
+.. include:: README.md
+   :relative-docs:
 
 .. toctree::
    :maxdepth: 2
-
 
    installation
    main
@@ -33,7 +20,8 @@ tutorial
    predict
    tutorial
 
-# Indices and tables
+Indices and tables
+==================
 
 * :ref:`genindex`
 * :ref:`modindex`
