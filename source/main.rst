@@ -2,7 +2,8 @@ Learn
 =====
 
 
-.. mdinclude:: README.md
+.. include:: README.md
+   :parser: recommonmark.parser.CommonMarkParser
 
 
 
