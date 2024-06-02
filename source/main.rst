@@ -3,7 +3,8 @@ Learn
 
 
 
-```{include} README.md
+.. myst::
+   :doc: README.md
 
 
 
