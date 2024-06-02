@@ -1,7 +1,7 @@
 Welcome to Matilda!
 ========================================
 
-.. include:: README.md
+.. mdinclude:: README.md
    
 
 
