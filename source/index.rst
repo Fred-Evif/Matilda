@@ -3,7 +3,7 @@ Welcome to Matilda!
 
 
 .. include:: README.md
-   :relative-docs:
+
 
 .. toctree::
    :maxdepth: 2
