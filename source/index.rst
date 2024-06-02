@@ -7,7 +7,8 @@ Welcome to Matilda!
 ========================================
 
 
-```{include} README.md
+.. myst::
+   :doc: README.md
    
 
 
