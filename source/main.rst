@@ -4,7 +4,6 @@ Learn
 
 
 .. include:: README.md
-   :relative-docs:
 
 
 
