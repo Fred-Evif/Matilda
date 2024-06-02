@@ -2,8 +2,9 @@ Welcome to Matilda!
 ========================================
 
 
-.. include:: README.md
 
+
+:doc:`README`
 
 .. toctree::
    :maxdepth: 2
