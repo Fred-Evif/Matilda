@@ -5,5 +5,6 @@ Quick Start
    :maxdepth: 2
 
    Intro
+   workflow
    Data-load-prep
 
