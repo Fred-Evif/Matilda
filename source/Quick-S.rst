@@ -5,6 +5,7 @@ Quick Start
    :maxdepth: 2
 
    Intro
+   DESIGN
    workflow
 
 
