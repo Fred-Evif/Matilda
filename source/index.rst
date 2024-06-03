@@ -14,7 +14,7 @@ If you find a model useful for your eresearch, please consider citing the Matild
    Guide
    API reference
    Discussion
-   Github
+   Github <https://github.com/liuchunlei0430/Matilda>
 
 
 Indices and tables
