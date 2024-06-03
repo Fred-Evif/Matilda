@@ -12,7 +12,7 @@ Here are some tutorials to get you started:
    SHARE-seq
    CITE-seq
    TEA-seq
-   Hyperparameter-tuning
+   Hyper-tun
 
 
 
