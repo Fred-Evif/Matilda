@@ -10,7 +10,6 @@ If you find a model useful for your eresearch, please consider citing the Matild
 
 
 .. toctree::
-   :hidden: true
    :maxdepth: 3
 
    installation
