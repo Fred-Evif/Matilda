@@ -9,8 +9,9 @@ In this introductory tutorial, we go through the different parts of Matilda's de
    :scale: 25%
    :align: center
 
-Data Preperation and Input
-----------------------------------
-Takes CITE-seq as example:
+
+
+
+
 
 
