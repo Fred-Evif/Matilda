@@ -9,7 +9,6 @@ Here are some tutorials to get you started:
    :maxdepth: 2
 
    Quick-S
-   function
    SHARE-seq
    CITE-seq
    TEA-seq
