@@ -9,8 +9,7 @@ Here are some tutorials to get you started:
    :maxdepth: 2
 
    Quick-S
-   scRNA-seq
-   ATAC-seq
+   SHARE-seq
    CITE-seq
    TEA-seq
    Hyperparameter-tuning
