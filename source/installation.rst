@@ -57,8 +57,8 @@ Install pytorch and cuda version based on your GPU settings. ::
 
 
 Step 4:
-The following python packages are required for running Matilda: h5py, numpy, pandas, captum. They can be installed in the conda environment as below:
-::
+The following python packages are required for running Matilda: h5py, numpy, pandas, captum. They can be installed in the conda environment as below: ::
+
    pip install h5py
    pip install numpy
    pip install pandas
@@ -69,9 +69,14 @@ The following python packages are required for running Matilda: h5py, numpy, pan
 
 
 Step 5:
-Otain Matilda by clonning the github repository:
-::
+Otain Matilda by clonning the github repository: ::
+
    git clone https://github.com/liuchunlei0430/Matilda.git
+
+
+pip
+--------------
+
 
 .. toctree::
    :maxdepth: 2
