@@ -77,6 +77,15 @@ Otain Matilda by clonning the github repository: ::
 pip
 --------------
 
+::
+
+   pip install scvi-tools
+Through pip with packages to run notebooks. This installs scanpy, etc.: ::
+
+   pip install "scvi-tools[tutorials]"
+Nightly version - clone this repo and run:::
+
+   pip install .
 
 .. toctree::
    :maxdepth: 2
