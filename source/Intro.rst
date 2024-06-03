@@ -50,7 +50,8 @@ Training the Matilda model (see Arguments section for more details).
   # Example run
   python main_matilda_train.py --rna ../data/TEAseq/train_rna.h5 --adt ../data/TEAseq/train_adt.h5 --atac ../data/TEAseq/train_atac.h5 --cty ../data/TEAseq/train_cty.csv
 
-### Argument
+Argument
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
 Training dataset information
 + `--rna`: path to training data RNA modality.
 + `--adt`: path to training data ADT modality (can be null if ATAC is provided).
