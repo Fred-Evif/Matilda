@@ -12,12 +12,12 @@ If you find a model useful for your eresearch, please consider citing the Matild
    :maxdepth: 2
 
    installation
-   main
-   model
-   function
-   train
-   predict
+   User guide
+   API reference
    tutorial
+   Discussion
+   Github
+
 
 Indices and tables
 ==================
