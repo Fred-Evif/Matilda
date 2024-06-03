@@ -1,5 +1,5 @@
-Introduction to the Matilda (Workflow and designment)
-=========================================
+Introduction to the Matilda (Workflow and Designment)
+======================================================
 
 In this introductory tutorial, we go through the different steps of an scvi-tools workflow.
 
