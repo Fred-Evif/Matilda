@@ -1,2 +1,2 @@
-Bioinformatics Terms explanation
+Bioinformatics Terms Explanation
 ================================
