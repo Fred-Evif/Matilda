@@ -12,9 +12,9 @@ If you find a model useful for your eresearch, please consider citing the Matild
    :maxdepth: 2
 
    installation
+   tutorial
    User guide
    API reference
-   tutorial
    Discussion
    Github
 
