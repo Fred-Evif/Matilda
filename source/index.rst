@@ -8,8 +8,10 @@ If you find a model useful for your eresearch, please consider citing the Matild
 
 :doc:`README`
 
+
 .. toctree::
-   :maxdepth: 2
+   :hidden: true
+   :maxdepth: 3
 
    installation
    tutorial
