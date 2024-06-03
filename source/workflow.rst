@@ -5,5 +5,6 @@ In this introductory tutorial, we go through the different steps of an scvi-tool
 
 Data Preperation and Input
 ----------------------------------
+Takes CITE-seq as example:
 
 
