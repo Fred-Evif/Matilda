@@ -43,6 +43,7 @@ Training the Matilda model (see Arguments section for more details).
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
 
 ::
+
   cd Matilda
   cd main
   # training the matilda model
@@ -52,11 +53,17 @@ Training the Matilda model (see Arguments section for more details).
 
 Argument
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
-Training dataset information
-+ `--rna`: path to training data RNA modality.
-+ `--adt`: path to training data ADT modality (can be null if ATAC is provided).
-+ `--atac`: path to training data ATAC modality (can be null if ADT is provided). Note ATAC data should be summarised to the gene level as "gene activity score".
-+ `--cty`: path to the labels of training data.
+
+.. note:: Training dataset information
+   
+   - `--rna`: path to training data RNA modality.
+
+   - `--adt`: path to training data ADT modality (can be null if ATAC is provided).
+
+   - `--atac`: path to training data ATAC modality (can be null if ADT is provided). Note ATAC data should be summarised to the gene level as "gene activity score".
+
+   - `--cty`: path to the labels of training data.
+
 
 Training and model config
 + `--batch_size`: Batch size (set as 64 by default)
