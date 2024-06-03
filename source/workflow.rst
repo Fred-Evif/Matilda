@@ -6,7 +6,7 @@ In this introductory tutorial, we go through the different steps of an scvi-tool
 
 .. image:: main.jpg
    :alt: The framework of Matilda
-   :scale: 50%
+   :scale: 30%
    :align: center
 
 Data Preperation and Input
