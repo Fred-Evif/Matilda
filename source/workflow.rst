@@ -7,7 +7,10 @@ In this introductory tutorial, we go through the different steps of an scvi-tool
    :scale: 50     # 这里是指令参数
    :width: 100
 
-   The framework of Matilda
+.. image:: main.jpg
+   :alt: The framework of Matilda
+   :scale: 100%
+   :align: center
 
 Data Preperation and Input
 ----------------------------------
