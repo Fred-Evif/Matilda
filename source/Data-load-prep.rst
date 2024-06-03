@@ -1,2 +1,2 @@
-Data loading and preperation
+Data loading and preparation
 ==================================
