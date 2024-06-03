@@ -1,7 +1,7 @@
-Introduction to Matilda (workflow)
+Quick Example
 ========================================
 
-In this introductory tutorial, we go through the different steps of Matilda's workflow. It is a quick example with specified dataset. The commands below would need to be run in settled conda environment, which could be referred to the :doc:`installation` part.
+In this tutorial, we go through the basic steps of Matilda's workflow. It is a quick example with specified dataset. The commands below would need to be run in settled conda environment, which could be referred to the :doc:`installation` part.
 
 Preparing intput for Matilda
 ------------------------------------------
@@ -64,26 +64,39 @@ Argument
 
    - `--cty`: path to the labels of training data.
 
+.. note:: Training and model config
+   
+   - `--batch_size`: Batch size (set as 64 by default)
 
-Training and model config
-+ `--batch_size`: Batch size (set as 64 by default)
-+ `--epochs`: Number of epochs.
-+ `--lr`: Learning rate.
-+ `--z_dim`: Dimension of latent space.
-+ `--hidden_rna`: Dimension of RNA branch.
-+ `--hidden_adt`: Dimension of ADT branch.
-+ `--hidden_atac`: Dimension of ATAC branch.
+   - `--epochs`: Number of epochs.
 
-Other config
-+ `--seed`: The random seed for training.
-+ `--augmentation`: Whether to augment simulated data.
+   - `--lr`: Learning rate.
+
+   - `--z_dim`: Dimension of latent space.
+
+   - `--hidden_rna`: Dimension of RNA branch.
+
+   - `--hidden_adt`: Dimension of ADT branch.
+
+   - `--hidden_atac`: Dimension of ATAC branch.
+
+   - `--z_dim`: Dimension of latent space.
+
+.. note:: Other config
+   
+   - `--seed`: The random seed for training.
+   - `--augmentation`: Whether to augment simulated data.
 
 Note: after training, the model will be saved in `./Matilda/trained_model/`.
 
-### Perform multiple tasks using trained Matilda model.
+Perform multiple tasks using trained Matilda model.
+------------------------------------------------------------------------------------
+
 After training the model, we can use `main_matilda_task.py` to do multiple tasks with different augments.
 
-### Argument for performing tasks
+Argument for performing tasks
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
+
 + `--classification`: whether to do cell type classification.
 + `--fs`: whether to do cell type feature selection.
 + `--dim_reduce`: whether to do dimension reduction.
