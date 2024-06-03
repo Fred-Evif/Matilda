@@ -39,10 +39,10 @@ Training and testing on demo dataset will cost no more than 1 minute with GPU.
 Running Matilda with the example dataset
 ------------------------------------------
 
-Training the Matilda model (see Arguments section for more details). ::
+Training the Matilda model (see Arguments section for more details). 
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
 
-
+::
   cd Matilda
   cd main
   # training the matilda model
