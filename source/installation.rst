@@ -79,10 +79,7 @@ pip
 
 ::
 
-   pip install scvi-tools
-Through pip with packages to run notebooks. This installs scanpy, etc.: ::
-
-   pip install "scvi-tools[tutorials]"
+   pip install Matilda
 Nightly version - clone this repo and run:::
 
    pip install .
