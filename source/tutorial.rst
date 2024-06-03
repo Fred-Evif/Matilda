@@ -8,7 +8,13 @@ Here are some tutorials to get you started:
 .. toctree::
    :maxdepth: 2
 
-   Start
+   Quick-S
+   
+   scRNA-seq
+   ATAC-seq
+   CITE-seq
+   TEA-seq
+   Hyperparameter-tuning
 
 
 
