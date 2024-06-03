@@ -13,7 +13,7 @@ If you find a model useful for your eresearch, please consider citing the Matild
 
    installation
    tutorial
-   User guide
+   Guide
    API reference
    Discussion
    Github
