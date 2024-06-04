@@ -62,7 +62,7 @@ where F represents the classification branch of the multi task neural networks, 
 
     S_j = \pfrac[X]{F(X)} |_{X_j}
 
-The magnitude of the derivative Sj indicates the effect of feature j on the classification score
+The magnitude of the derivative :math:`S_j` indicates the effect of feature j on the classification score
 
 Matilda model training
 --------------------------
