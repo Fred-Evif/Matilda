@@ -1,4 +1,4 @@
-Script-explanation: 'predict  '
+Script-explanation: 'predict '
 ====================================
 
 
