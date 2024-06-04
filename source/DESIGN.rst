@@ -14,14 +14,14 @@ The multi-task neural networks in Matilda consist of multimodality-specific en c
 
 Loss function 
 ------------------
-Let X be the single-cell multimodal omic data from N modalities, the VAE component of Matilda contains two procedures: (i) the encoders encode each modality in the data X individually, and concatenate them for joint learning. This process projected the high dimensional X into a low-dimensional latent space. We denote the posterior distribution of this process as :math:`q_θ (z|X)`, where θ is the learnable parameter of the neural network in this procedure; (ii) the decoders reconstruct the low dimensional latent space to the high-dimensional original data space. We denote the posterior distribution of this pro cess as :math:`p_ϕ(X|z)`, where ϕ is the learnable parameter of the neural network in this procedure. The loss function of the data simulation component can be represented as the negative log-likelihood with a regularizer:
+Let X be the single-cell multimodal omic data from N modalities, the VAE component of Matilda contains two procedures: (i) the encoders encode each modality in the data X individually, and concatenate them for joint learning. This process projected the high dimensional X into a low-dimensional latent space. We denote the posterior distribution of this process as :math:`q_θ (z|X)` , where θ is the learnable parameter of the neural network in this procedure; (ii) the decoders reconstruct the low dimensional latent space to the high-dimensional original data space. We denote the posterior distribution of this pro cess as :math:`p_ϕ(X|z)` , where ϕ is the learnable parameter of the neural network in this procedure. The loss function of the data simulation component can be represented as the negative log-likelihood with a regularizer:
 
 .. math::
     :label: negative log-likelihood with a regularizer
 
     L_{sim}(θ,ϕ)=−E_{z∼q_θ(z|X)}[logp_ϕ(X|z)] + KL(q_θ(z|X)||p(z))
 
-The first term is the reconstruction loss using the expectation of negative log-likelihood. This term encourages the decoder to learn to reconstruct the original data Xusingthe low-dimensional representation z. The second term is the Kullback-Leibler (KL) divergence between the encoder’s distribution :math:`q_θ (z|X)`and p(z), where p(z) is specified as a standard Normal distribution as p(z) ∼ N(0,1). This divergence measures the information loss when using :math:`q_θ (z|X)` to represent p(z). The encoder network parameters are in turn optimized using stochastic gradient descent via back propagation, which is made possible by the reparameteriza tion trick (11).
+The first term is the reconstruction loss using the expectation of negative log-likelihood. This term encourages the decoder to learn to reconstruct the original data Xusingthe low-dimensional representation z. The second term is the Kullback-Leibler (KL) divergence between the encoder’s distribution :math:`q_θ (z|X)` and p(z), where p(z) is specified as a standard Normal distribution as p(z) ∼ N(0,1). This divergence measures the information loss when using :math:`q_θ (z|X)` to represent p(z). The encoder network parameters are in turn optimized using stochastic gradient descent via back propagation, which is made possible by the reparameteriza tion trick (11).
 For the loss function of the classification component, we use cross-entropy loss with label smoothing (20). Label smoothing is a regularizer technique, which replaces one hot real label vector yreal with a mixture of yreal and the uniform distribution:
 
 .. math::
@@ -36,7 +36,7 @@ where K is the number of label classes, and α is a hyperpa rameter that determi
 
     L_{cla} = −\sum_{i=1}^{K}  y_{ls}^i  log  y_{output}^i
 
-where y_{output}^i is the predicted label for the ith cell. To learn Matilda, we combined the simulation loss and classification loss to give the following overall loss function:
+where :math:`y_{output}^i` is the predicted label for the ith cell. To learn Matilda, we combined the simulation loss and classification loss to give the following overall loss function:
 
 .. math::
     :label: Label Smoothing
@@ -55,7 +55,7 @@ Leveraging its neural network architecture, Matilda implements two approaches, i
 
     S_j = \int_{τ=0}^1 X_j × \pfrac[X_j]{F(τ × X)} dτ
 
-where F represents the classification branch of the multi task neural networks, and ∂F(τ× X) ∂Xj is the gradient of F(X) along with the jth feature. We aggregated these derivatives across cells within each cell type. These aggregated gradients indicate the importance of each feature from each data modality in predicting each cell type. The top ranked features from each cell type can be selected based on their aggregated derivatives for subsequent analyses. For the saliency method, a cell-type-specific importance score of a feature j is computed using the derivative:
+where F represents the classification branch of the multi task neural networks, and :math:`\pfrac[X_j]{F(τ × X)}` ∂F(τ× X) ∂Xj is the gradient of F(X) along with the jth feature. We aggregated these derivatives across cells within each cell type. These aggregated gradients indicate the importance of each feature from each data modality in predicting each cell type. The top ranked features from each cell type can be selected based on their aggregated derivatives for subsequent analyses. For the saliency method, a cell-type-specific importance score of a feature j is computed using the derivative:
 
 .. math::
     :label: features' importance score
