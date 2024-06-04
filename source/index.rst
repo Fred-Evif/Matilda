@@ -15,7 +15,6 @@ If you find a model useful for your eresearch, please consider citing the Matild
    tutorial
    Guide
    API reference <https://github.com/liuchunlei0430/Matilda>
-   Discussion <https://github.com/liuchunlei0430/Matilda>
    Github <https://github.com/liuchunlei0430/Matilda>
 
 
