@@ -12,6 +12,8 @@
 #
 import os
 import sys
+import sphinx_rtd_theme
+
 print("Current working directory:", os.getcwd())
 print("Python executable:", sys.executable)
 print("sys.path:", sys.path)
@@ -85,7 +87,7 @@ rst_prolog = """
 # a list of builtin themes.
 #
 html_theme = 'sphinx-rtd-theme'
-
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
