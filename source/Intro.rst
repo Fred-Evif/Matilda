@@ -21,7 +21,7 @@ An example for creating .h5 file from expression matrix in the R environment is 
   write_h5(exprs_list = list(rna = train_rna, h5file_list = "/Matilda/data/TEA-seq/train_rna.h5")
 
 
-An example for creating gene activity score from ATAC modality in the R environment using human gene annotation is as below: ::
+An example for creating gene activity score from ATAC modality in the R environment using human gene annotation is as below ::
 
   gene.activities <- CreateGeneActivityMatrix2(peak.matrix=teaseq.peak,
                                                annotation.file = “Homo_sapiens.GRCh38.90.chr.gtf.gz”,
