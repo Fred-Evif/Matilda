@@ -51,7 +51,7 @@ Joint feature selection from multiple modalities
 Leveraging its neural network architecture, Matilda implements two approaches, i.e. integrated gradient (IG) (22) descent and saliency (23) based procedures, to detect the most informative features simultaneously from each of all data modalities. Specifically, for the IG method, to assess the importance of each feature, the trained model was used for back propagation of the partial derivatives from the output units of the classification network to the input units of the encoders, where each input unit represents an individual feature from a given modality in the input data X. The importance score of each input feature of each cell is determined by approximating the integral gradients of the model’s output to its input:
 
 .. math::
-    :label: Label Smoothing
+    :label: features' importance score
 
    S_j = \int_{τ=0}^1 X_j × \pfrac[X_j]{F(τ × X)} dτ
 
