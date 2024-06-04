@@ -79,22 +79,14 @@ rst_prolog = """
 """
 
 
-repository_url = f"https://github.com/liuchunlei0430/Matilda"
-
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'sphinx-rtd-theme'
 
-html_theme_options = {
-    "repository_url": repository_url,
-    "use_repository_button": True,
-    "logo_only": True,
-    "show_toc_level": 4,
-    "path_to_docs": "source/",
-}
+
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
