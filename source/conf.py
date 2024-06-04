@@ -80,7 +80,7 @@ rst_prolog = """
 
 
 repository_url = f"https://github.com/liuchunlei0430/Matilda"
-version = info["Version"]
+
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -94,7 +94,6 @@ html_theme_options = {
     "logo_only": True,
     "show_toc_level": 4,
     "path_to_docs": "source/",
-    "repository_branch": version,
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
