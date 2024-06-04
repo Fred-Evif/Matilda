@@ -133,7 +133,6 @@ Output: The output will be saved in `./Matilda/output/simulation_result/TEAseq/r
 .. image:: visualisation.jpg
    :scale: 30%
    :align: center
-<img width=50% src="https://github.com/liuchunlei0430/Matilda/blob/main/img/visualisation.jpg"/> 
 
 ::
 
@@ -201,7 +200,6 @@ Output: The output will be saved in `./Matilda/output/dim_reduce/TEAseq/query/`.
 .. image:: visualisation2.png
    :scale: 50%
    :align: center
-<img width=50% src="https://github.com/liuchunlei0430/Matilda/blob/main/img/visualisation2.png"/>  
 
 ::
 
