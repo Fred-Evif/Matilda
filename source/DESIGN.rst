@@ -53,7 +53,7 @@ Leveraging its neural network architecture, Matilda implements two approaches, i
 .. math::
     :label: features' importance score
 
-   S_j = \int_{τ=0}^1 X_j × \pfrac[X_j]{F(τ × X)} dτ
+    S_j = \int_{τ=0}^1 X_j × \pfrac[X_j]{F(τ × X)} dτ
 
 where F represents the classification branch of the multi task neural networks, and ∂F(τ× X) ∂Xj is the gradient of F(X) along with the jth feature. We aggregated these derivatives across cells within each cell type. These aggregated gradients indicate the importance of each feature from each data modality in predicting each cell type. The top ranked features from each cell type can be selected based on their aggregated derivatives for subsequent analyses. For the saliency method, a cell-type-specific importance score of a feature j is computed using the derivative:
 
