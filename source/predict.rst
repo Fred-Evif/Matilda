@@ -1,5 +1,6 @@
-predict 
-===============
+Script-explanation: 'predict  '
+====================================
+
 
 .. automodule:: predict
    :members:
