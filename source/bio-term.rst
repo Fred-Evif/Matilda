@@ -2,11 +2,10 @@ Bioinformatics Terms Explanation
 ================================
 
 
-+ Single-cell omics:
-+ Transcriptomics:
++ Single-cell omics: 
 + Multi-modal/Multi-modality:
-+ Sequencing data/Sequencing:
++ Sequencing data/Sequencing: 
 + TEA-seq:
 + SHARE-seq:
 + CITE-seq:
-+ high variable genes (HVGs):
++ High variable genes (HVGs):
