@@ -117,7 +117,7 @@ Argument for performing tasks
 Output: The output will be saved in `./Matilda/output/simulation_result/TEAseq/reference/`. To generate UMAP plots for the simulated data using R, run `./Matilda/qc/visualize_simulated_data.Rmd`. The UMAPs are:
 
 .. image:: simulation_anchor.jpg
-   :scale: 25%
+   :scale: 40%
    :align: center
 
 
@@ -131,7 +131,7 @@ Output: The output will be saved in `./Matilda/output/simulation_result/TEAseq/r
   Output: The output will be saved in `./Matilda/output/dim_reduce/TEAseq/reference/`. To generate UMAP plots and 4 clustering metrices, i.e., ARI, NMI, FM, Jaccard, for the latent space using R, run `./Matilda/qc/visualize_latent_space.Rmd`. The UMAPs are:
 
 .. image:: visualisation.jpg
-   :scale: 25%
+   :scale: 30%
    :align: center
 <img width=50% src="https://github.com/liuchunlei0430/Matilda/blob/main/img/visualisation.jpg"/> 
 
@@ -199,7 +199,7 @@ Output: The output will be saved in `./Matilda/output/classification/TEAseq/quer
 Output: The output will be saved in `./Matilda/output/dim_reduce/TEAseq/query/`. To generate UMAP plots and 4 clustering metrices, i.e., ARI, NMI, FM, Jaccard, for the latent space using R, run `./Matilda/qc/visualize_latent_space.Rmd`. The UMAPs are:
 
 .. image:: visualisation2.png
-   :scale: 25%
+   :scale: 50%
    :align: center
 <img width=50% src="https://github.com/liuchunlei0430/Matilda/blob/main/img/visualisation2.png"/>  
 
