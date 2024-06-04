@@ -198,7 +198,7 @@ Output: The output will be saved in `./Matilda/output/classification/TEAseq/quer
 
 Output: The output will be saved in `./Matilda/output/dim_reduce/TEAseq/query/`. To generate UMAP plots and 4 clustering metrices, i.e., ARI, NMI, FM, Jaccard, for the latent space using R, run `./Matilda/qc/visualize_latent_space.Rmd`. The UMAPs are:
 
-.. image:: visualisation2.jpg
+.. image:: visualisation2.png
    :scale: 25%
    :align: center
 <img width=50% src="https://github.com/liuchunlei0430/Matilda/blob/main/img/visualisation2.png"/>  
