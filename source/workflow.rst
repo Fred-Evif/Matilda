@@ -1,4 +1,4 @@
-Introduction to the Matilda (Designment)
+Introduction to the Matilda (Workflow)
 ======================================================
 
 In this introductory tutorial, we go through the different parts of Matilda's designment.
