@@ -71,6 +71,15 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
+rst_prolog = """
+.. math::
+
+   \\newcommand{\\ud}{\\mathop{}\\negthinspace\mathrm{d}}
+   \\newcommand{\\pfrac}[2][x]{\\frac{\\partial #2}{\\partial #1}}
+"""
+
+
+
 
 # -- Options for HTML output -------------------------------------------------
 
