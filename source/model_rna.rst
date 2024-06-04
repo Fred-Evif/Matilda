@@ -1,4 +1,4 @@
-Script-explanation: 'model_rna '
+Script-explanation: 'model_rna'
 ====================================
 
 .. automodule:: model_rna
