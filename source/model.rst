@@ -1,5 +1,5 @@
-model
-===============
+Script-explanation: 'model'
+============================
 
 .. automodule:: model
    :members:
