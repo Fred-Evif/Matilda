@@ -1,5 +1,6 @@
-train
-===============
+Script-explanation: 'train'
+====================================
+
 
 .. automodule:: train
    :members:
