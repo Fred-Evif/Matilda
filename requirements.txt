@@ -11,3 +11,4 @@ myst-parser
 linkify-it-py
 sphinx-autobuild
 sphinx_rtd_theme
+sphinxcontrib.mermaid
