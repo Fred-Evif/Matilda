@@ -15,7 +15,7 @@ If you find a model useful for your research, please consider citing the Matilda
    tutorial
    Guide
    API
-   Github <https://github.com/liuchunlei0430/Matilda>
+   Github <https://github.com/PYangLab/Matilda/tree/main>
 
 
 Indices and tables
