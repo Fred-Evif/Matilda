@@ -86,6 +86,8 @@ rst_prolog = """
 # a list of builtin themes.
 #
 html_theme = 'classic'
+collapsiblesidebar = TRUE
+stickysidebar = TRUE
 html_sidebars = {
    '**': ['globaltoc.html', 'sourcelink.html', 'searchbox.html'],
    'using/windows': ['windowssidebar.html', 'searchbox.html'],
