@@ -227,8 +227,3 @@ for Single-Cell Multi-omics. Trends Biotechnol. 38, 1007–1022 (2020).
 
 [3] Swanson, E. et al. Simultaneous trimodal single-cell measurement of transcripts, epitopes, and
 chromatin accessibility using SHARE-seq. Elife 10, (2021).
-
-License
-------------------------------------------------------------------------------------
-
-This project is covered under the Apache 2.0 License.
