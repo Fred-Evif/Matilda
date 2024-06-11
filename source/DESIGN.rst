@@ -17,7 +17,6 @@ Loss function
 Let X be the single-cell multimodal omic data from N modalities, the VAE component of Matilda contains two procedures: (i) the encoders encode each modality in the data X individually, and concatenate them for joint learning. This process projected the high dimensional X into a low-dimensional latent space. We denote the posterior distribution of this process as :math:`q_θ (z|X)` , where θ is the learnable parameter of the neural network in this procedure; (ii) the decoders reconstruct the low dimensional latent space to the high-dimensional original data space. We denote the posterior distribution of this pro cess as :math:`p_ϕ(X|z)` , where ϕ is the learnable parameter of the neural network in this procedure. The loss function of the data simulation component can be represented as the negative log-likelihood with a regularizer:
 
 .. math::
-    :label: negative log-likelihood with a regularizer
 
     L_{sim}(θ,ϕ)=−E_{z∼q_θ(z|X)}[logp_ϕ(X|z)] + KL(q_θ(z|X)||p(z))
 
