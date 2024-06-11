@@ -104,7 +104,7 @@ html_theme_options = {
     'titles_only': False,
 }
 
-html_logo = "/logo.png"
+html_logo = "logo.png"
 
 
 
