@@ -49,7 +49,7 @@ Training the Matilda model with CITE-seq (see Arguments section for more details
   cd Matilda
   cd main
   # training the matilda model
-  python main_matilda_train.py --rna [trainRNA] --adt [trainADT]  --cty [traincty] #[training dataset]
+  python main_matilda_train.py --rna [trainRNA] --adt [trainADT] --cty [traincty] #[training dataset]
   # Example run
   python main_matilda_train.py --rna ../data/CITEseq/Ctrain_rna.h5 --adt ../data/CITEseq/Ctrain_adt.h5 --cty ../data/CITEseq/Ctrain_cty.csv
 
