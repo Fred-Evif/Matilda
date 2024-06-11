@@ -67,8 +67,6 @@ Reference
 
 [1] Kingma,D.P. and Welling,M. (2014) Auto-encoding variational bayes. arXiv doi: https://arxiv.org/abs/1312.6114, 10 December 2022, preprint: not peer reviewed.
 
-[9] Hao,Y., Hao,S., Andersen-Nissen,E., Mauck,W.M., Zheng,S., Butler,A., Lee,M.J., Wilk,A.J., Darby,C., Zager,M. et al. (2021) Integrated analysis of multimodal single-cell data. Cell, 184, 3573–3587.
-
 [2] Ioffe,S. and Szegedy,C. (2015) Batch normalization: accelerating deep network training by reducing internal covariate shift. arXiv doi: https://arxiv.org/abs/1502.03167, 02 March 2015, preprint: not peer reviewed.
 
 [3] He,K., Zhang,X., Ren,S. and Sun,J. (2016) Deep residual learning for image recognition. In: 2016 IEEE Conference on Computer Vision andPattern Recognition (CVPR). IEEE, Las Vegas, NV, USA, pp. 770–778.
@@ -82,7 +80,8 @@ Reference
 [7] Simonyan,K., Vedaldi,A. and Zisserman,A. (2014) Deep inside convolutional networks: visualising image classification models and saliency maps. arXiv doi: https://arxiv.org/abs/1312.6034,19April 2014, preprint: not peer reviewed.
 
 [8] Liu,Z., Luo,W., Wu,B., Yang,X., Liu,W. and Cheng,K.-T. (2020) Bi-real net: binarizing deep network towards real-network performance. Int. J. Comput. Vis., 128, 202–219.
- 
+
+[9] Hao,Y., Hao,S., Andersen-Nissen,E., Mauck,W.M., Zheng,S., Butler,A., Lee,M.J., Wilk,A.J., Darby,C., Zager,M. et al. (2021) Integrated analysis of multimodal single-cell data. Cell, 184, 3573–3587.
 
 
 
