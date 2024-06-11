@@ -10,7 +10,7 @@ Envrionment setup
   cd Matilda
   cd main
   # training the matilda model
-  python main_matilda_train.py --rna [trainRNA] --adt [trainADT]  --cty [traincty] #[training dataset]
+  python main_matilda_train.py --rna [trainRNA] --adt [trainADT] --cty [traincty] #[training dataset]
   # Example run
   python main_matilda_train.py --rna ../data/CITEseq/Ctrain_rna.h5 --adt ../data/CITEseq/Ctrain_adt.h5 --cty ../data/CITEseq/Ctrain_cty.csv
 
@@ -60,9 +60,7 @@ Argument
    
    - `--rna`: path to training data RNA modality.
 
-   - `--adt`: path to training data ADT modality (can be null if ATAC is provided).
-
-   - `--atac`: path to training data ATAC modality (can be null if ADT is provided). Note ATAC data should be summarised to the gene level as "gene activity score".
+   - `--adt`: path to training data ADT modality.
 
    - `--cty`: path to the labels of training data.
 
@@ -79,8 +77,6 @@ Argument
    - `--hidden_rna`: Dimension of RNA branch.
 
    - `--hidden_adt`: Dimension of ADT branch.
-
-   - `--hidden_atac`: Dimension of ATAC branch.
 
    - `--z_dim`: Dimension of latent space.
 
@@ -112,9 +108,9 @@ Argument for performing tasks
 ::
 
   # using the trained model for data simulation
-  python main_matilda_task.py  --rna [trainRNA] --adt [trainADT] --atac [trainATAC] --cty [traincty] --simulation True --simulation_ct 1 --simulation_num 200
+  python main_matilda_task.py  --rna [trainRNA] --adt [trainADT] --cty [traincty] --simulation True --simulation_ct 1 --simulation_num 200
   # Example run
-  python main_matilda_task.py --rna ../data/TEAseq/train_rna.h5 --adt ../data/TEAseq/train_adt.h5 --atac ../data/TEAseq/train_atac.h5 --cty ../data/TEAseq/train_cty.csv --simulation True --simulation_ct 1 --simulation_num 200
+  python main_matilda_task.py --rna ../data/TEAseq/train_rna.h5 --adt ../data/TEAseq/train_adt.h5 --cty ../data/TEAseq/train_cty.csv --simulation True --simulation_ct 1 --simulation_num 200
 
 Output: The output will be saved in `./Matilda/output/simulation_result/TEAseq/reference/`. To generate UMAP plots for the simulated data using R, run `./Matilda/qc/visualize_simulated_data.Rmd`. The UMAPs are:
 
@@ -126,9 +122,9 @@ Output: The output will be saved in `./Matilda/output/simulation_result/TEAseq/r
 ::
 
   # using the trained model for data dimension reduction and visualisation
-  python main_matilda_task.py  --rna [trainRNA] --adt [trainADT] --atac [trainATAC] --cty [traincty] --dim_reduce True
+  python main_matilda_task.py  --rna [trainRNA] --adt [trainADT] --cty [traincty] --dim_reduce True
   # Example run
-  python main_matilda_task.py --rna ../data/TEAseq/train_rna.h5 --adt ../data/TEAseq/train_adt.h5 --atac ../data/TEAseq/train_atac.h5 --cty ../data/TEAseq/train_cty.csv --dim_reduce True
+  python main_matilda_task.py --rna ../data/TEAseq/train_rna.h5 --adt ../data/TEAseq/train_adt.h5 --cty ../data/TEAseq/train_cty.csv --dim_reduce True
   
   Output: The output will be saved in `./Matilda/output/dim_reduce/TEAseq/reference/`. To generate UMAP plots and 4 clustering metrices, i.e., ARI, NMI, FM, Jaccard, for the latent space using R, run `./Matilda/qc/visualize_latent_space.Rmd`. The UMAPs are:
 
@@ -139,9 +135,9 @@ Output: The output will be saved in `./Matilda/output/simulation_result/TEAseq/r
 ::
 
   # using the trained model for feature selection
-  python main_matilda_task.py  --rna [trainRNA] --adt [trainADT] --atac [trainATAC] --cty [traincty] --fs True
+  python main_matilda_task.py  --rna [trainRNA] --adt [trainADT] --cty [traincty] --fs True
   # Example run
-  python main_matilda_task.py --rna ../data/TEAseq/train_rna.h5 --adt ../data/TEAseq/train_adt.h5 --atac ../data/TEAseq/train_atac.h5 --cty ../data/TEAseq/train_cty.csv --fs True
+  python main_matilda_task.py --rna ../data/TEAseq/train_rna.h5 --adt ../data/TEAseq/train_adt.h5 --cty ../data/TEAseq/train_cty.csv --fs True
 
 Output: The output, i.e. feature importance scores, will be saved in `./Matilda/output/marker/TEAseq/reference/`. 
 
@@ -152,9 +148,9 @@ Output: The output, i.e. feature importance scores, will be saved in `./Matilda/
 ::
 
   # using the trained model for classifying query data
-  python main_matilda_task.py  --rna [queryRNA] --adt [queryADT] --atac [queryATAC] --cty [querycty] --classification True
+  python main_matilda_task.py  --rna [queryRNA] --adt [queryADT] --cty [querycty] --classification True
   # Example run
-  python main_matilda_task.py --rna ../data/TEAseq/test_rna.h5 --adt ../data/TEAseq/test_adt.h5 --atac ../data/TEAseq/test_atac.h5 --cty ../data/TEAseq/test_cty.csv --classification True --query True
+  python main_matilda_task.py --rna ../data/TEAseq/test_rna.h5 --adt ../data/TEAseq/test_adt.h5 --cty ../data/TEAseq/test_cty.csv --classification True --query True
 
 
 Output: The output will be saved in `./Matilda/output/classification/TEAseq/query/`.
@@ -192,9 +188,9 @@ Output: The output will be saved in `./Matilda/output/classification/TEAseq/quer
 ::
 
   # using the trained model for dimension reduction and visualising query data
-  python main_matilda_task.py --rna [queryRNA] --adt [queryADT] --atac [queryATAC] --cty [querycty] --dim_reduce True
+  python main_matilda_task.py --rna [queryRNA] --adt [queryADT] --cty [querycty] --dim_reduce True
   # Example run
-  python main_matilda_task.py  --rna ../data/TEAseq/test_rna.h5 --adt ../data/TEAseq/test_adt.h5 --atac ../data/TEAseq/test_atac.h5 --cty ../data/TEAseq/test_cty.csv --dim_reduce True --query True
+  python main_matilda_task.py  --rna ../data/TEAseq/test_rna.h5 --adt ../data/TEAseq/test_adt.h5 --cty ../data/TEAseq/test_cty.csv --dim_reduce True --query True
 
 
 Output: The output will be saved in `./Matilda/output/dim_reduce/TEAseq/query/`. To generate UMAP plots and 4 clustering metrices, i.e., ARI, NMI, FM, Jaccard, for the latent space using R, run `./Matilda/qc/visualize_latent_space.Rmd`. The UMAPs are:
@@ -206,9 +202,9 @@ Output: The output will be saved in `./Matilda/output/dim_reduce/TEAseq/query/`.
 ::
 
   # using the trained model for feature selection
-  python main_matilda_task.py --rna [queryRNA] --adt [queryADT] --atac [queryATAC] --cty [querycty] --fs True
+  python main_matilda_task.py --rna [queryRNA] --adt [queryADT] --cty [querycty] --fs True
   # Example run
-  python main_matilda_task.py  --rna ../data/TEAseq/test_rna.h5 --adt ../data/TEAseq/test_adt.h5 --atac ../data/TEAseq/test_atac.h5 --cty ../data/TEAseq/test_cty.csv  --fs True --query True
+  python main_matilda_task.py  --rna ../data/TEAseq/test_rna.h5 --adt ../data/TEAseq/test_adt.h5 --atac --cty ../data/TEAseq/test_cty.csv  --fs True --query True
 
 
 Output: The output, i.e. feature importance scores, will be saved in `./Matilda/output/markers/TEAseq/query/`. 
