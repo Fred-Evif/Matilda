@@ -27,7 +27,7 @@ sys.path.insert(0, os.path.abspath('../main'))
 # -- Project information -----------------------------------------------------
 
 project = 'Matilda'
-copyright = '2024, Chunlei Liu, Pengyi Yang, Website constructed by Zebang Yang, Sichang Ding'
+copyright = '2024, Chunlei Liu, Pengyi Yang; Website constructed by Zebang Yang, Sichang Ding'
 author = 'Chunlei Liu,Pengyi Yang'
 
 # The full version, including alpha/beta/rc tags
@@ -41,7 +41,7 @@ release = '1.0.0'
 # ones.
 # Here, the autodoc allows Sphinx to automatically generate documentation from docstrings, napoleon allows Sphinx to parse Google-style docstrings, and myst_parser allows Sphinx to parse Markdown files.
 extensions = [
-
+    "sphinx_copybutton",
     "myst_parser",
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
