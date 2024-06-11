@@ -2,7 +2,7 @@ Implement Matilda on SHARE-seq Dataset
 ========================================
 
 
-In this tutorial, we go through the basic process of applying Matilda on CITE-seq dataset. The commands below would need to be run in settled conda environment, which could be referred to the :doc:`installation` part.
+In this tutorial, we go through the basic process of applying Matilda on SHARE-seq dataset. The commands below would need to be run in settled conda environment, which could be referred to the :doc:`installation` part.
 
 Envrionment setup
 ------------------------------------------
@@ -13,7 +13,7 @@ Envrionment setup
   # training the matilda model
   python main_matilda_train.py --rna [trainRNA] --adt [trainADT]  --cty [traincty] #[training dataset]
   # Example run
-  python main_matilda_train.py --rna ../data/CITEseq/Ctrain_rna.h5 --adt ../data/CITEseq/Ctrain_adt.h5 --cty ../data/CITEseq/Ctrain_cty.csv
+  python main_matilda_train.py --rna ../data/SHAREseq/Ctrain_rna.h5 --adt ../data/SHAREseq/Ctrain_adt.h5 --cty ../data/SHAREseq/Ctrain_cty.csv
 
 Preparing intput for Matilda
 ------------------------------------------
@@ -30,19 +30,19 @@ An example for creating .h5 file from expression matrix in the R environment is 
       h5write(colnames(exprs_list[[i]]), h5file_list[i], name = "matrix/barcodes")
     }  
   }
-  write_h5(exprs_list = list(rna = train_rna, h5file_list = "/Matilda/data/CITE-seq/Ctrain_rna.h5")
+  write_h5(exprs_list = list(rna = train_rna, h5file_list = "/Matilda/data/SHARE-seq/Ctrain_rna.h5")
 
 Example dataset
 ,,,,,,,,,,,,,,,,,,,,,,
 
 
-As an example, the processed CITE-seq dataset by Swanson et al待改. (GSE158013待改) is provided for the example run, which is saved in `./Matilda/data/CITEseq`.
+As an example, the processed SHARE-seq dataset by Swanson et al待改. (GSE158013待改) is provided for the example run, which is saved in `./Matilda/data/SHAREseq`.
 You can prepare the example dataset as input for Matilda or use their own datasets.
 
-Running Matilda with the example CITE-seq dataset
+Running Matilda with the example SHARE-seq dataset
 ----------------------------------------------------
 
-Training the Matilda model with CITE-seq (see Arguments section for more details). 
+Training the Matilda model with SHARE-seq (see Arguments section for more details). 
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
 
 ::
@@ -52,7 +52,7 @@ Training the Matilda model with CITE-seq (see Arguments section for more details
   # training the matilda model
   python main_matilda_train.py --rna [trainRNA] --adt [trainADT]  --cty [traincty] #[training dataset]
   # Example run
-  python main_matilda_train.py --rna ../data/CITEseq/Ctrain_rna.h5 --adt ../data/CITEseq/Ctrain_adt.h5 --cty ../data/CITEseq/Ctrain_cty.csv
+  python main_matilda_train.py --rna ../data/SHAREseq/Ctrain_rna.h5 --adt ../data/SHAREseq/Ctrain_adt.h5 --cty ../data/SHAREseq/Ctrain_cty.csv
 
 Argument
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
@@ -115,9 +115,9 @@ Argument for performing tasks
   # using the trained model for data simulation
   python main_matilda_task.py  --rna [trainRNA] --adt [trainADT] --atac [trainATAC] --cty [traincty] --simulation True --simulation_ct 1 --simulation_num 200
   # Example run
-  python main_matilda_task.py --rna ../data/TEAseq/train_rna.h5 --adt ../data/TEAseq/train_adt.h5 --atac ../data/TEAseq/train_atac.h5 --cty ../data/TEAseq/train_cty.csv --simulation True --simulation_ct 1 --simulation_num 200
+  python main_matilda_task.py --rna ../data/SHAREseq/train_rna.h5 --adt ../data/SHAREseq/train_adt.h5 --atac ../data/SHAREseq/train_atac.h5 --cty ../data/SHAREseq/train_cty.csv --simulation True --simulation_ct 1 --simulation_num 200
 
-Output: The output will be saved in `./Matilda/output/simulation_result/TEAseq/reference/`. To generate UMAP plots for the simulated data using R, run `./Matilda/qc/visualize_simulated_data.Rmd`. The UMAPs are:
+Output: The output will be saved in `./Matilda/output/simulation_result/SHAREseq/reference/`. To generate UMAP plots for the simulated data using R, run `./Matilda/qc/visualize_simulated_data.Rmd`. The UMAPs are:
 
 .. image:: simulation_anchor.jpg
    :scale: 40%
@@ -129,9 +129,9 @@ Output: The output will be saved in `./Matilda/output/simulation_result/TEAseq/r
   # using the trained model for data dimension reduction and visualisation
   python main_matilda_task.py  --rna [trainRNA] --adt [trainADT] --atac [trainATAC] --cty [traincty] --dim_reduce True
   # Example run
-  python main_matilda_task.py --rna ../data/TEAseq/train_rna.h5 --adt ../data/TEAseq/train_adt.h5 --atac ../data/TEAseq/train_atac.h5 --cty ../data/TEAseq/train_cty.csv --dim_reduce True
+  python main_matilda_task.py --rna ../data/SHAREseq/train_rna.h5 --adt ../data/SHAREseq/train_adt.h5 --atac ../data/SHAREseq/train_atac.h5 --cty ../data/SHAREseq/train_cty.csv --dim_reduce True
   
-  Output: The output will be saved in `./Matilda/output/dim_reduce/TEAseq/reference/`. To generate UMAP plots and 4 clustering metrices, i.e., ARI, NMI, FM, Jaccard, for the latent space using R, run `./Matilda/qc/visualize_latent_space.Rmd`. The UMAPs are:
+  Output: The output will be saved in `./Matilda/output/dim_reduce/SHAREseq/reference/`. To generate UMAP plots and 4 clustering metrices, i.e., ARI, NMI, FM, Jaccard, for the latent space using R, run `./Matilda/qc/visualize_latent_space.Rmd`. The UMAPs are:
 
 .. image:: visualisation.jpg
    :scale: 30%
@@ -142,9 +142,9 @@ Output: The output will be saved in `./Matilda/output/simulation_result/TEAseq/r
   # using the trained model for feature selection
   python main_matilda_task.py  --rna [trainRNA] --adt [trainADT] --atac [trainATAC] --cty [traincty] --fs True
   # Example run
-  python main_matilda_task.py --rna ../data/TEAseq/train_rna.h5 --adt ../data/TEAseq/train_adt.h5 --atac ../data/TEAseq/train_atac.h5 --cty ../data/TEAseq/train_cty.csv --fs True
+  python main_matilda_task.py --rna ../data/SHAREseq/train_rna.h5 --adt ../data/SHAREseq/train_adt.h5 --atac ../data/SHAREseq/train_atac.h5 --cty ../data/SHAREseq/train_cty.csv --fs True
 
-Output: The output, i.e. feature importance scores, will be saved in `./Matilda/output/marker/TEAseq/reference/`. 
+Output: The output, i.e. feature importance scores, will be saved in `./Matilda/output/marker/SHAREseq/reference/`. 
 
 
 2) Multi-task on the query data
@@ -155,10 +155,10 @@ Output: The output, i.e. feature importance scores, will be saved in `./Matilda/
   # using the trained model for classifying query data
   python main_matilda_task.py  --rna [queryRNA] --adt [queryADT] --atac [queryATAC] --cty [querycty] --classification True
   # Example run
-  python main_matilda_task.py --rna ../data/TEAseq/test_rna.h5 --adt ../data/TEAseq/test_adt.h5 --atac ../data/TEAseq/test_atac.h5 --cty ../data/TEAseq/test_cty.csv --classification True --query True
+  python main_matilda_task.py --rna ../data/SHAREseq/test_rna.h5 --adt ../data/SHAREseq/test_adt.h5 --atac ../data/SHAREseq/test_atac.h5 --cty ../data/SHAREseq/test_cty.csv --classification True --query True
 
 
-Output: The output will be saved in `./Matilda/output/classification/TEAseq/query/`.
+Output: The output will be saved in `./Matilda/output/classification/SHAREseq/query/`.
 
 ::
 
@@ -195,10 +195,10 @@ Output: The output will be saved in `./Matilda/output/classification/TEAseq/quer
   # using the trained model for dimension reduction and visualising query data
   python main_matilda_task.py --rna [queryRNA] --adt [queryADT] --atac [queryATAC] --cty [querycty] --dim_reduce True
   # Example run
-  python main_matilda_task.py  --rna ../data/TEAseq/test_rna.h5 --adt ../data/TEAseq/test_adt.h5 --atac ../data/TEAseq/test_atac.h5 --cty ../data/TEAseq/test_cty.csv --dim_reduce True --query True
+  python main_matilda_task.py  --rna ../data/SHAREseq/test_rna.h5 --adt ../data/SHAREseq/test_adt.h5 --atac ../data/SHAREseq/test_atac.h5 --cty ../data/SHAREseq/test_cty.csv --dim_reduce True --query True
 
 
-Output: The output will be saved in `./Matilda/output/dim_reduce/TEAseq/query/`. To generate UMAP plots and 4 clustering metrices, i.e., ARI, NMI, FM, Jaccard, for the latent space using R, run `./Matilda/qc/visualize_latent_space.Rmd`. The UMAPs are:
+Output: The output will be saved in `./Matilda/output/dim_reduce/SHAREseq/query/`. To generate UMAP plots and 4 clustering metrices, i.e., ARI, NMI, FM, Jaccard, for the latent space using R, run `./Matilda/qc/visualize_latent_space.Rmd`. The UMAPs are:
 
 .. image:: visualisation2.png
    :scale: 50%
@@ -209,10 +209,10 @@ Output: The output will be saved in `./Matilda/output/dim_reduce/TEAseq/query/`.
   # using the trained model for feature selection
   python main_matilda_task.py --rna [queryRNA] --adt [queryADT] --atac [queryATAC] --cty [querycty] --fs True
   # Example run
-  python main_matilda_task.py  --rna ../data/TEAseq/test_rna.h5 --adt ../data/TEAseq/test_adt.h5 --atac ../data/TEAseq/test_atac.h5 --cty ../data/TEAseq/test_cty.csv  --fs True --query True
+  python main_matilda_task.py  --rna ../data/SHAREseq/test_rna.h5 --adt ../data/SHAREseq/test_adt.h5 --atac ../data/SHAREseq/test_atac.h5 --cty ../data/SHAREseq/test_cty.csv  --fs True --query True
 
 
-Output: The output, i.e. feature importance scores, will be saved in `./Matilda/output/markers/TEAseq/query/`. 
+Output: The output, i.e. feature importance scores, will be saved in `./Matilda/output/markers/SHAREseq/query/`. 
 
 
 Reference
@@ -226,7 +226,7 @@ SARS-CoV-2-associated multisystem inflammatory syndrome in children. Immunity 54
 for Single-Cell Multi-omics. Trends Biotechnol. 38, 1007–1022 (2020).
 
 [3] Swanson, E. et al. Simultaneous trimodal single-cell measurement of transcripts, epitopes, and
-chromatin accessibility using TEA-seq. Elife 10, (2021).
+chromatin accessibility using SHARE-seq. Elife 10, (2021).
 
 License
 ------------------------------------------------------------------------------------
