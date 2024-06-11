@@ -17,7 +17,6 @@ Loss function
 Let X be the single-cell multimodal omic data from N modalities, the VAE component of Matilda contains two procedures: (i) the encoders encode each modality in the data X individually, and concatenate them for joint learning. This process projected the high dimensional X into a low-dimensional latent space. We denote the posterior distribution of this process as :math:`q_θ (z|X)` , where θ is the learnable parameter of the neural network in this procedure; (ii) the decoders reconstruct the low dimensional latent space to the high-dimensional original data space. We denote the posterior distribution of this pro cess as :math:`p_ϕ(X|z)` , where ϕ is the learnable parameter of the neural network in this procedure. The loss function of the data simulation component can be represented as the negative log-likelihood with a regularizer:
 
 .. math::
-    :label: negative log-likelihood with a regularizer
 
     L_{sim}(θ,ϕ)=−E_{z∼q_θ(z|X)}[logp_ϕ(X|z)] + KL(q_θ(z|X)||p(z))     
 
@@ -25,21 +24,18 @@ The first term is the reconstruction loss using the expectation of negative log-
 For the loss function of the classification component, we use cross-entropy loss with label smoothing (20). Label smoothing is a regularizer technique, which replaces one hot real label vector yreal with a mixture of yreal and the uniform distribution:
 
 .. math::
-    :label: Label Smoothing
 
     y_{ls} = (1−α) × y_{real} + α/K
 
 where K is the number of label classes, and α is a hyperpa rameter that determines the amount of smoothing. Then, the classification loss can be represented as:
 
 .. math::
-    :label: Label Smoothing
 
     L_{cla} = −\sum_{i=1}^{K}  y_{ls}^i  log  y_{output}^i
 
 where :math:`y_{output}^i` is the predicted label for the ith cell. To learn Matilda, we combined the simulation loss and classification loss to give the following overall loss function:
 
 .. math::
-    :label: Label Smoothing
 
     L_{sum} = L_{sim} + λ × L_{cla}
 
@@ -51,14 +47,12 @@ Joint feature selection from multiple modalities
 Leveraging its neural network architecture, Matilda implements two approaches, i.e. integrated gradient (IG) (22) descent and saliency (23) based procedures, to detect the most informative features simultaneously from each of all data modalities. Specifically, for the IG method, to assess the importance of each feature, the trained model was used for back propagation of the partial derivatives from the output units of the classification network to the input units of the encoders, where each input unit represents an individual feature from a given modality in the input data X. The importance score of each input feature of each cell is determined by approximating the integral gradients of the model’s output to its input:
 
 .. math::
-    :label: features' importance score
 
     S_j = \int_{τ=0}^1 X_j × \pfrac[X_j]{F(τ × X)} dτ
 
 where F represents the classification branch of the multi task neural networks, and :math:`\pfrac[X_j]{F(τ × X)}` is the gradient of F(X) along with the jth feature. We aggregated these derivatives across cells within each cell type. These aggregated gradients indicate the importance of each feature from each data modality in predicting each cell type. The top ranked features from each cell type can be selected based on their aggregated derivatives for subsequent analyses. For the saliency method, a cell-type-specific importance score of a feature j is computed using the derivative:
 
 .. math::
-    :label: features' importance score
 
     S_j = \pfrac[X]{F(X)} |_{X_j}
 
