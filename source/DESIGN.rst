@@ -18,8 +18,8 @@ Let X be the single-cell multimodal omic data from N modalities, the VAE compone
 
 .. math::
 
-    L_{sim}(θ,ϕ)=−E_{z∼q_θ(z|X)}[logp_ϕ(X|z)] + KL(q_θ(z|X)||p(z))     :label: negative log-likelihood with a regularizer
-
+    L_{sim}(θ,ϕ)=−E_{z∼q_θ(z|X)}[logp_ϕ(X|z)] + KL(q_θ(z|X)||p(z))     
+   :label: negative log-likelihood with a regularizer
 
 The first term is the reconstruction loss using the expectation of negative log-likelihood. This term encourages the decoder to learn to reconstruct the original data Xusingthe low-dimensional representation z. The second term is the Kullback-Leibler (KL) divergence between the encoder’s distribution :math:`q_θ (z|X)` and p(z), where p(z) is specified as a standard Normal distribution as p(z) ∼ N(0,1). This divergence measures the information loss when using :math:`q_θ (z|X)` to represent p(z). The encoder network parameters are in turn optimized using stochastic gradient descent via back propagation, which is made possible by the reparameteriza tion trick (11).
 For the loss function of the classification component, we use cross-entropy loss with label smoothing (20). Label smoothing is a regularizer technique, which replaces one hot real label vector yreal with a mixture of yreal and the uniform distribution:
