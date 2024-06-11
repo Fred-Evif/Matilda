@@ -85,11 +85,24 @@ rst_prolog = """
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'classic'
-
+html_theme = 'sphinx_rtd_theme'
+collapsiblesidebar = True
+stickysidebar = True
 html_sidebars = {
    '**': ['globaltoc.html', 'sourcelink.html', 'searchbox.html'],
-   'using/windows': ['windowssidebar.html', 'searchbox.html'], collapsiblesidebar = True, stickysidebar = True
+   'using/windows': ['windowssidebar.html', 'searchbox.html']
+}
+html_theme_options = {
+    'analytics_anonymize_ip': False,
+    'logo_only': True,
+    'display_version': True,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+    'collapse_navigation': True,
+    'sticky_navigation': True,
+    'navigation_depth': 4,
+    'includehidden': True,
+    'titles_only': False,
 }
 
 
