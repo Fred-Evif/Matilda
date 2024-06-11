@@ -27,7 +27,7 @@ sys.path.insert(0, os.path.abspath('../main'))
 # -- Project information -----------------------------------------------------
 
 project = 'Matilda'
-copyright = '2023, Chunlei Liu,Pengyi Yang'
+copyright = '2024, Chunlei Liu, Pengyi Yang, Website constructed by Zebang Yang, Sichang Ding'
 author = 'Chunlei Liu,Pengyi Yang'
 
 # The full version, including alpha/beta/rc tags
@@ -86,11 +86,10 @@ rst_prolog = """
 # a list of builtin themes.
 #
 html_theme = 'classic'
-collapsiblesidebar = True
-stickysidebar = True
+
 html_sidebars = {
    '**': ['globaltoc.html', 'sourcelink.html', 'searchbox.html'],
-   'using/windows': ['windowssidebar.html', 'searchbox.html'],
+   'using/windows': ['windowssidebar.html', 'searchbox.html'], collapsiblesidebar = True, stickysidebar = True
 }
 
 
