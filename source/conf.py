@@ -86,8 +86,7 @@ rst_prolog = """
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
-collapsiblesidebar = True
-stickysidebar = True
+
 html_sidebars = {
    '**': ['globaltoc.html', 'sourcelink.html', 'searchbox.html'],
    'using/windows': ['windowssidebar.html', 'searchbox.html']
