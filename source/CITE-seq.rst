@@ -110,7 +110,7 @@ Argument for performing tasks
   # using the trained model for data simulation
   python main_matilda_task.py  --rna [trainRNA] --adt [trainADT] --cty [traincty] --simulation True --simulation_ct 1 --simulation_num 200
   # Example run
-  python main_matilda_task.py --rna ../data/CITEseq/train_rna.h5 --adt ../data/CITEseq/train_adt.h5 --cty ../data/CITEseq/train_cty.csv --simulation True --simulation_ct 1 --simulation_num 200
+  python main_matilda_task.py --rna ../data/CITEseq/Ctrain_rna.h5 --adt ../data/CITEseq/Ctrain_adt.h5 --cty ../data/CITEseq/Ctrain_cty.csv --simulation True --simulation_ct 1 --simulation_num 200
 
 Output: The output will be saved in `./Matilda/output/simulation_result/CITEseq/reference/`. To generate UMAP plots for the simulated data using R, run `./Matilda/qc/visualize_simulated_data.Rmd`. The UMAPs are:
 
@@ -124,7 +124,7 @@ Output: The output will be saved in `./Matilda/output/simulation_result/CITEseq/
   # using the trained model for data dimension reduction and visualisation
   python main_matilda_task.py  --rna [trainRNA] --adt [trainADT] --cty [traincty] --dim_reduce True
   # Example run
-  python main_matilda_task.py --rna ../data/CITEseq/train_rna.h5 --adt ../data/CITEseq/train_adt.h5 --cty ../data/CITEseq/train_cty.csv --dim_reduce True
+  python main_matilda_task.py --rna ../data/CITEseq/Ctrain_rna.h5 --adt ../data/CITEseq/Ctrain_adt.h5 --cty ../data/CITEseq/Ctrain_cty.csv --dim_reduce True
   
   Output: The output will be saved in `./Matilda/output/dim_reduce/CITEseq/reference/`. To generate UMAP plots and 4 clustering metrices, i.e., ARI, NMI, FM, Jaccard, for the latent space using R, run `./Matilda/qc/visualize_latent_space.Rmd`. The UMAPs are:
 
@@ -137,7 +137,7 @@ Output: The output will be saved in `./Matilda/output/simulation_result/CITEseq/
   # using the trained model for feature selection
   python main_matilda_task.py  --rna [trainRNA] --adt [trainADT] --cty [traincty] --fs True
   # Example run
-  python main_matilda_task.py --rna ../data/CITEseq/train_rna.h5 --adt ../data/CITEseq/train_adt.h5 --cty ../data/CITEseq/train_cty.csv --fs True
+  python main_matilda_task.py --rna ../data/CITEseq/Ctrain_rna.h5 --adt ../data/CITEseq/Ctrain_adt.h5 --cty ../data/CITEseq/Ctrain_cty.csv --fs True
 
 Output: The output, i.e. feature importance scores, will be saved in `./Matilda/output/marker/CITEseq/reference/`. 
 
@@ -150,7 +150,7 @@ Output: The output, i.e. feature importance scores, will be saved in `./Matilda/
   # using the trained model for classifying query data
   python main_matilda_task.py  --rna [queryRNA] --adt [queryADT] --cty [querycty] --classification True
   # Example run
-  python main_matilda_task.py --rna ../data/CITEseq/test_rna.h5 --adt ../data/CITEseq/test_adt.h5 --cty ../data/CITEseq/test_cty.csv --classification True --query True
+  python main_matilda_task.py --rna ../data/CITEseq/Ctest_rna.h5 --adt ../data/CITEseq/Ctest_adt.h5 --cty ../data/CITEseq/Ctest_cty.csv --classification True --query True
 
 
 Output: The output will be saved in `./Matilda/output/classification/CITEseq/query/`.
@@ -160,7 +160,7 @@ Output: The output will be saved in `./Matilda/output/classification/CITEseq/que
   # using the trained model for dimension reduction and visualising query data
   python main_matilda_task.py --rna [queryRNA] --adt [queryADT] --cty [querycty] --dim_reduce True
   # Example run
-  python main_matilda_task.py  --rna ../data/CITEseq/test_rna.h5 --adt ../data/CITEseq/test_adt.h5 --cty ../data/CITEseq/test_cty.csv --dim_reduce True --query True
+  python main_matilda_task.py  --rna ../data/CITEseq/Ctest_rna.h5 --adt ../data/CITEseq/Ctest_adt.h5 --cty ../data/CITEseq/Ctest_cty.csv --dim_reduce True --query True
 
 
 Output: The output will be saved in `./Matilda/output/dim_reduce/CITEseq/query/`. To generate UMAP plots and 4 clustering metrices, i.e., ARI, NMI, FM, Jaccard, for the latent space using R, run `./Matilda/qc/visualize_latent_space.Rmd`. The UMAPs are:
@@ -174,7 +174,7 @@ Output: The output will be saved in `./Matilda/output/dim_reduce/CITEseq/query/`
   # using the trained model for feature selection
   python main_matilda_task.py --rna [queryRNA] --adt [queryADT] --cty [querycty] --fs True
   # Example run
-  python main_matilda_task.py  --rna ../data/CITEseq/test_rna.h5 --adt ../data/CITEseq/test_adt.h5 --atac --cty ../data/CITEseq/test_cty.csv  --fs True --query True
+  python main_matilda_task.py  --rna ../data/CITEseq/Ctest_rna.h5 --adt ../data/CITEseq/Ctest_adt.h5 --atac --cty ../data/CITEseq/Ctest_cty.csv  --fs True --query True
 
 
 Output: The output, i.e. feature importance scores, will be saved in `./Matilda/output/markers/CITEseq/query/`. 
