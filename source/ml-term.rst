@@ -7,12 +7,8 @@ Machine Learning Terms Explanation
 + Data augmentation:
 + Dimension reduction:
 + Feature Selection:
-+ Neuron network:
 + Full-connection neural network:
-+ Layers:
 + Variational autoencoder (VAE):
-+ Encoder:
-+ Decoder:
 + Latent space:
 + Reparameterization:
 + Batch normalization:
@@ -20,5 +16,3 @@ Machine Learning Terms Explanation
 + Label smoothing:
 + Regularizatioin:
 + Gradient Descent:
-+ Learning rate:
-+ k-means clustering:
