@@ -1,3 +1,16 @@
 Data Preperation and Input
 ----------------------------------
 Takes CITE-seq as example:
+
+
+
+pip 
+--------------
+Available soon. Before that, please install with conda first.
+
+::
+
+   pip install Matilda
+Nightly version - clone this repo and run:::
+
+   pip install .
