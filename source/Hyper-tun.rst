@@ -41,7 +41,7 @@ Tunable hyperparameters
 
 
 
-More details of the classes and functions of these hyperparamters could be viewed in the sections of :doc:`Guide`.
+More details of the classes and functions of these hyperparamters or other hyperparameters could be viewed in the sections of :doc:`Guide`.
 
 
 
