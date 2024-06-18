@@ -11,7 +11,7 @@ Envrionment setup
   cd Matilda
   cd main
   # training the matilda model
-  python main_matilda_train.py --rna [trainRNA] --adt [trainADT]  --cty [traincty] #[training dataset]
+  python main_matilda_train.py --rna [trainRNA] --adt [trainADT] --cty [traincty] #[training dataset]
   # Example run
   python main_matilda_train.py --rna ../data/SHAREseq/Ctrain_rna.h5 --adt ../data/SHAREseq/Ctrain_adt.h5 --cty ../data/SHAREseq/Ctrain_cty.csv
 
