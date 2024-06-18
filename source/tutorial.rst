@@ -10,7 +10,7 @@ Here are some tutorials to get you started:
 
    DESIGN
    workflow
-   Quick-S
+   Intro
    Hyper-tun
 
 
