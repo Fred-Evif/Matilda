@@ -8,9 +8,9 @@ Here are some tutorials to get you started:
 .. toctree::
    :maxdepth: 2
 
+   DESIGN
+   workflow
    Quick-S
-   SHARE-seq
-   CITE-seq
    Hyper-tun
 
 
