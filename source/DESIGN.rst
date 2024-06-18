@@ -1,7 +1,9 @@
 Introduction to the Matilda (Designment)
 ======================================================
 
-In this introductory tutorial, we go through the different parts of Matilda's designment. More details of the theories and experiments could be reviewed in 
+In this introductory tutorial, we go through the different parts of Matilda's designment. More details of the theories and experiments could be reviewed in the publication_ of Matilda.
+
+.. _publication: https://academic.oup.com/nar/article/51/8/e45/7076464
 
 Multi-task learning architecture
 --------------------------------------
