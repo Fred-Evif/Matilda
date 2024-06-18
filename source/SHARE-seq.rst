@@ -161,7 +161,6 @@ Output: The output, i.e. feature importance scores, will be saved in `./Matilda/
 Output: The output will be saved in `./Matilda/output/classification/SHAREseq/query/`.
 
 ::
-
   
   cell ID:  0 	 	 real cell type: T.CD4.Memory 	 	 predicted cell type: T.CD4.Naive 	 	 probability: 0.77
   cell ID:  1 	 	 real cell type: B.Activated 	 	   predicted cell type: B.Activated 	 	 probability: 0.53
