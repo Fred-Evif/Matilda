@@ -1,4 +1,4 @@
-Implementing Matilda (TEA-seq)
+Implementing Matilda 
 ========================================
 
 In this tutorial, we go through the basic steps for implementing Matilda on multimodal dataset. It is a quick example with specified dataset. The commands below would need to be run in settled conda environment, which could be referred to the :doc:`installation` part.
