@@ -4,14 +4,14 @@ Contact Us
 Emails
 -----------
 
-+ For theories or implementation: Dr. Chunlei Liu
++ For theories or implementation: 
 
-  cliu@cmri.org.au
+Dr. Chunlei Liu  -------- cliu@cmri.org.au
 
-+ For cooperation or development: Prof. Pengyi Yang
++ For cooperation or development: 
 
-  pengyi.yang@sydney.edu.au
+Prof. Pengyi Yang  --------  pengyi.yang@sydney.edu.au
 
-+ For websites construcion: Zebang Yang
++ For websites construcion: 
 
-  fredyzbxiao@outlook.com
+Zebang Yang  --------  fredyzbxiao@outlook.com
