@@ -16,8 +16,7 @@ If you find a model useful for your research, please consider citing the Matilda
    Guide
    API
    Github <https://github.com/PYangLab/Matilda/tree/main>
-   Feedback and Discussion <fredyzbxiao@outlook.com>
-
+   FD 
 
 Indices and tables
 ==================
