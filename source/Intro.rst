@@ -1,4 +1,4 @@
-Quick Example
+Quick Example (TEA-seq)
 ========================================
 
 In this tutorial, we go through the basic steps of Matilda's workflow. It is a quick example with specified dataset. The commands below would need to be run in settled conda environment, which could be referred to the :doc:`installation` part.
