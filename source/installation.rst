@@ -85,8 +85,7 @@ Nightly version - clone this repo and run:::
 
    pip install .
 
-.. toctree::
-   :maxdepth: 2
+
 
 
 
