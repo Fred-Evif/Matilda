@@ -10,10 +10,32 @@ As an example, the processed TEA-seq dataset by Swanson et al. (GSE158013) is pr
 Tunable hyperparameters
 -------------------------------------------------------
 
+.. note:: Training and model config
+   
+   - `--batch_size`: Batch size (set as 64 by default)
+
+   - `--epochs`: Number of epochs.
+
+   - `--lr`: Learning rate.
+
+   - `--z_dim`: Dimension of latent space.
+
+.. note:: Other config
+   
+   - `--seed`: The random seed for training.
+   - `--augmentation`: Whether to augment simulated data.
 
 
 
 
+.. note::
+
+  + `--classification`: whether to do cell type classification.
+  + `--fs`: whether to do cell type feature selection.
+  + `--dim_reduce`: whether to do dimension reduction.
+  + `--simulation`: whether to do simulation. 
+  + `--simulation_ct`: an integer index for which cell type to simulate. Only be activated when `simulation = True`.
+  + `--simulation_num`: the number of cells to simulate for the specified cell type. Only be activated when `simulation = True`.
 
 
 
