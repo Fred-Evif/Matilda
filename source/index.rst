@@ -14,7 +14,6 @@ If you find a model useful for your research, please consider citing the Matilda
    installation
    tutorial
    Guide
-   API
    Github <https://github.com/PYangLab/Matilda/tree/main>
    FD 
 
