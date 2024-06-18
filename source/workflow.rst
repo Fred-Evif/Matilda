@@ -1,4 +1,4 @@
-Introduction to the Matilda (Workflow)
+Completed Workflow
 ======================================================
 
 In this introductory tutorial, we go through the different steps of Matilda's workflow.
