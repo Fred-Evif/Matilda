@@ -11,7 +11,6 @@ Here are some tutorials to get you started:
    Quick-S
    SHARE-seq
    CITE-seq
-   TEA-seq
    Hyper-tun
 
 
