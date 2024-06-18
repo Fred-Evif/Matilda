@@ -1,7 +1,7 @@
 Hyperparameter Tuning
 ========================
 
-In this PART, we go through the basic steps for tuning the hyperparameters of  Matilda. It is an example with specified dataset. The commands below would need to be run in settled conda environment, which could be referred to the :doc:`installation` part.
+In this part, we go through the basic steps for tuning the hyperparameters of  Matilda. It is an example with specified dataset. The commands below would need to be run in settled conda environment, which could be referred to the :doc:`installation` part.
 
 Before Tuning the hyperparameter, the data should be appropriately prepared and loaded. The process could be referred to the corresponding parts in :doc:`Quick-S`.
 
