@@ -10,7 +10,19 @@ As an example, the processed TEA-seq dataset by Swanson et al. (GSE158013) is pr
 Tunable hyperparameters
 -------------------------------------------------------
 
-Details of the classes and functions of these hyperparamters could be viewed in the sections of :doc:`Guide`.
+
+
+
+
+
+
+
+
+
+More details of the classes and functions of these hyperparamters could be viewed in the sections of :doc:`Guide`.
+
+
+
 
 Tuning strategies and methods
 -------------------------------------------------------
