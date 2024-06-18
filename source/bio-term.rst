@@ -12,6 +12,9 @@ Bioinformatics Terms Explanation
 Reference:
 -----------
 [1] Mercatelli, Daniele; Balboni, Nicola; De Giorgio, Francesca; Aleo, Emanuela; Garone, Caterina; Giorgi, Fedrico M. (2021-05-06). "The Transcriptome of SH-SY5Y at Single-Cell Resolution: A CITE-Seq Data Analysis Workflow". Methods and Protocols. 4 (2): 28. doi:10.3390/mps4020028. ISSN 2409-9279. PMC 8163004. PMID 34066513.
+
 [2] Sequencing, Wikipedia. https://en.wikipedia.org/wiki/Sequencing
+
 [3] Ma S, Zhang B, LaFave LM, Earl AS, Chiang Z, Hu Y, Ding J, Brack A, Kartha VK, Tay T, Law T, Lareau C, Hsu YC, Regev A, Buenrostro JD. Chromatin Potential Identified by Shared Single-Cell Profiling of RNA and Chromatin. Cell. 2020 Nov 12;183(4):1103-1116.e20. doi: 10.1016/j.cell.2020.09.056. Epub 2020 Oct 23. PMID: 33098772; PMCID: PMC7669735.
+
 [4] Swanson, E., Lord, C., Reading, J., Heubeck, A. T., Genge, P. C., Thomson, Z., ... & Skene, P. J. (2021). Simultaneous trimodal single-cell measurement of transcripts, epitopes, and chromatin accessibility using TEA-seq. Elife, 10, e63632.
