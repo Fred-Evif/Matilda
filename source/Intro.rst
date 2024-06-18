@@ -31,7 +31,9 @@ An example for creating gene activity score from ATAC modality in the R environm
 Example dataset
 ,,,,,,,,,,,,,,,,,,,,,,
 
-As an example, the processed TEA-seq dataset by Swanson et al. (GSE158013) is provided for the example run, which is saved in `./Matilda/data/TEAseq`. It contain three modalities at the same time. Therefore, the datasets with the same or less modalities (such as CITE-seq, SHARE-seq) could be analysed similarly following with the steps below.
+As an example, the processed TEA-seq dataset by Swanson et al. (GSE158013) is provided for the example run, which is saved in `./Matilda/data/TEAseq`.
+
+It contain three modalities at the same time. Therefore, the datasets with the same or less modalities (such as CITE-seq, SHARE-seq) could be analysed similarly following with the steps below.
 
 Users can prepare the example dataset as input for Matilda or use their own datasets.
 Training and testing on demo dataset will cost no more than 1 minute with GPU.
