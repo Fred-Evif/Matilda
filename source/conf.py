@@ -27,7 +27,7 @@ sys.path.insert(0, os.path.abspath('../main'))
 # -- Project information -----------------------------------------------------
 
 project = 'Matilda'
-copyright = '2024, Chunlei Liu, Pengyi Yang; Website constructed by Zebang Yang, Sichang Ding'
+copyright = '2024, Chunlei Liu, Pengyi Yang; Website constructed by Zebang Yang'
 author = 'Chunlei Liu,Pengyi Yang'
 
 # The full version, including alpha/beta/rc tags
