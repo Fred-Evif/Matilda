@@ -1,7 +1,7 @@
-Quick Example (TEA-seq)
+Implementing Matilda (TEA-seq)
 ========================================
 
-In this tutorial, we go through the basic steps of Matilda's workflow. It is a quick example with specified dataset. The commands below would need to be run in settled conda environment, which could be referred to the :doc:`installation` part.
+In this tutorial, we go through the basic steps for implementing Matilda on multimodal dataset. It is a quick example with specified dataset. The commands below would need to be run in settled conda environment, which could be referred to the :doc:`installation` part.
 
 Preparing intput for Matilda
 ------------------------------------------
@@ -31,8 +31,8 @@ An example for creating gene activity score from ATAC modality in the R environm
 Example dataset
 ,,,,,,,,,,,,,,,,,,,,,,
 
+As an example, the processed TEA-seq dataset by Swanson et al. (GSE158013) is provided for the example run, which is saved in `./Matilda/data/TEAseq`. It contain three modalities at the same time. Therefore, the datasets with the same or less modalities (such as CITE-seq, SHARE-seq) could be analysed similarly following with the steps below.
 
-As an example, the processed TEA-seq dataset by Swanson et al. (GSE158013) is provided for the example run, which is saved in `./Matilda/data/TEAseq`.
 Users can prepare the example dataset as input for Matilda or use their own datasets.
 Training and testing on demo dataset will cost no more than 1 minute with GPU.
 
