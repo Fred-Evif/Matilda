@@ -74,16 +74,7 @@ Otain Matilda by clonning the github repository: ::
    git clone https://github.com/liuchunlei0430/Matilda.git
 
 
-pip 
---------------
-Available soon. Before that, please install with conda first.
 
-::
-
-   pip install Matilda
-Nightly version - clone this repo and run:::
-
-   pip install .
 
 
 
