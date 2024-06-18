@@ -4,18 +4,18 @@ Contact Us
 Emails
 -----------
 
--For theories or implementation
+-`For theories or implementation`:
 
-Contacts: Dr. Chunlei Liu
-
-
--For cooporation or development
-
-Contacts: Professor. Pengyi Yang
+  Contacts: Dr. Chunlei Liu
 
 
--For websites construcion
+-`For cooporation or development`:
 
-Contacts: Zebang Yang
+  Contacts: Professor. Pengyi Yang
 
-fredyzbxiao@outlook.com
+
+-`For websites construcion`:
+
+  Contacts: Zebang Yang
+
+  fredyzbxiao@outlook.com
