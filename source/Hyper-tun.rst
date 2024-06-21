@@ -5,203 +5,35 @@ In this part, we go through the basic steps for tuning the hyperparameters of  M
 
 Before Tuning the hyperparameter, the data should be appropriately prepared and loaded. The process could be referred to the corresponding parts in :doc:`Intro`.
 
-As an example, the processed TEA-seq dataset by Swanson et al. (GSE158013) is provided for this example, which is saved in `./Matilda/data/TEAseq`.
-
 Tunable hyperparameters
 -------------------------------------------------------
+The corresponding functions of who may require these hyperparamters or other functional hyperparameters (decide whether applying specific processes) could be viewed in the sections of :doc:`Guide`.
 
-.. note:: Training and model config
-   
-   - `--batch_size`: Batch size (set as 64 by default)
-
-   - `--epochs`: Number of epochs.
-
-   - `--lr`: Learning rate.
-
-   - `--z_dim`: Dimension of latent space.
-
-.. note:: Other config
-   
-   - `--seed`: The random seed for training.
-   - `--augmentation`: Whether to augment simulated data.
-
-
-
-
-.. note::
-
-  + `--classification`: whether to do cell type classification.
-  + `--fs`: whether to do cell type feature selection.
-  + `--dim_reduce`: whether to do dimension reduction.
-  + `--simulation`: whether to do simulation. 
-  + `--simulation_ct`: an integer index for which cell type to simulate. Only be activated when `simulation = True`.
-  + `--simulation_num`: the number of cells to simulate for the specified cell type. Only be activated when `simulation = True`.
-
-
-
-
-
-More details of the classes and functions of these hyperparamters or other hyperparameters could be viewed in the sections of :doc:`Guide`.
-
-
-
++----------------+-------------+------+--------------------------------------------------------+
+| Tunable        | Default     | Input|      Basic                                             |
+| hyperparameter | value       | type |      meaning                                           |
++================+=============+======+========================================================+
+| batch_size     | 64          | int  | Batch size for learning                                |
++----------------+-------------+------+--------------------------------------------------------+
+| epochs         | 30          | int  | Training epoches                                       |
++----------------+-------------+------+--------------------------------------------------------+
+| hidden_rna     | 185         | int  | The number of neurons for RNA layer                    |
++----------------+-------------+------+--------------------------------------------------------+
+| hidden_adt     | 30          | int  | The number of neurons for ADT layer                    |
++----------------+-------------+------+--------------------------------------------------------+
+| hidden_atac    | 185         | int  | The number of neurons for ATAC layer                   |
++----------------+-------------+------+--------------------------------------------------------+
+| lr             | 0.02        |float | Learning rate for optimisation                         |
++----------------+-------------+------+--------------------------------------------------------+
+| simulation_num | 100         | int  | The number of cells to simulate for the specified cell |
+|                |             |      | type. Only be activated when `simulation = True`.      |
++----------------+-------------+------+--------------------------------------------------------+
+| z_dim          | 100         | int  | Dimension of latent space                              |
++----------------+-------------+------+--------------------------------------------------------+
 
 Tuning strategies and methods
 -------------------------------------------------------
-
-Training the Matilda model (see Arguments section for more details). 
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
-
-::
-
-  cd Matilda
-  cd main
-  # training the matilda model
-  python main_matilda_train.py --rna [trainRNA] --adt [trainADT] --atac [trainATAC] --cty [traincty] #[training dataset]
-  # Example run
-  python main_matilda_train.py --rna ../data/TEAseq/train_rna.h5 --adt ../data/TEAseq/train_adt.h5 --atac ../data/TEAseq/train_atac.h5 --cty ../data/TEAseq/train_cty.csv
-
-Argument
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
-
-.. note:: Training and model config
-   
-   - `--batch_size`: Batch size (set as 64 by default)
-
-   - `--epochs`: Number of epochs.
-
-   - `--lr`: Learning rate.
-
-   - `--z_dim`: Dimension of latent space.
-
-.. note:: Other config
-   
-   - `--seed`: The random seed for training.
-   - `--augmentation`: Whether to augment simulated data.
-
-Note: after training, the model will be saved in `./Matilda/trained_model/`.
-
-Perform multiple tasks using trained Matilda model.
-------------------------------------------------------------------------------------
-
-After training the model, we can use `main_matilda_task.py` to do multiple tasks with different augments.
-
-Argument for performing tasks
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
-
-.. note::
-
-  + `--classification`: whether to do cell type classification.
-  + `--fs`: whether to do cell type feature selection.
-  + `--dim_reduce`: whether to do dimension reduction.
-  + `--simulation`: whether to do simulation. 
-  + `--simulation_ct`: an integer index for which cell type to simulate. Only be activated when `simulation = True`.
-  + `--simulation_num`: the number of cells to simulate for the specified cell type. Only be activated when `simulation = True`.
-
-
-1) Multi-task on the training data
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
-::
-
-  # using the trained model for data simulation
-  python main_matilda_task.py  --rna [trainRNA] --adt [trainADT] --atac [trainATAC] --cty [traincty] --simulation True --simulation_ct 1 --simulation_num 200
-  # Example run
-  python main_matilda_task.py --rna ../data/TEAseq/train_rna.h5 --adt ../data/TEAseq/train_adt.h5 --atac ../data/TEAseq/train_atac.h5 --cty ../data/TEAseq/train_cty.csv --simulation True --simulation_ct 1 --simulation_num 200
-
-
-::
-
-  # using the trained model for data dimension reduction and visualisation
-  python main_matilda_task.py  --rna [trainRNA] --adt [trainADT] --atac [trainATAC] --cty [traincty] --dim_reduce True
-  # Example run
-  python main_matilda_task.py --rna ../data/TEAseq/train_rna.h5 --adt ../data/TEAseq/train_adt.h5 --atac ../data/TEAseq/train_atac.h5 --cty ../data/TEAseq/train_cty.csv --dim_reduce True
-
-
-::
-
-  # using the trained model for feature selection
-  python main_matilda_task.py  --rna [trainRNA] --adt [trainADT] --atac [trainATAC] --cty [traincty] --fs True
-  # Example run
-  python main_matilda_task.py --rna ../data/TEAseq/train_rna.h5 --adt ../data/TEAseq/train_adt.h5 --atac ../data/TEAseq/train_atac.h5 --cty ../data/TEAseq/train_cty.csv --fs True
-
-Output: The output, i.e. feature importance scores, will be saved in `./Matilda/output/marker/TEAseq/reference/`. 
-
-
-2) Multi-task on the query data
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
-
-::
-
-  # using the trained model for classifying query data
-  python main_matilda_task.py  --rna [queryRNA] --adt [queryADT] --atac [queryATAC] --cty [querycty] --classification True
-  # Example run
-  python main_matilda_task.py --rna ../data/TEAseq/test_rna.h5 --adt ../data/TEAseq/test_adt.h5 --atac ../data/TEAseq/test_atac.h5 --cty ../data/TEAseq/test_cty.csv --classification True --query True
-
-
-Output: The output will be saved in `./Matilda/output/classification/TEAseq/query/`.
-
-::
-
-  cell ID:  0 	 	 real cell type: T.CD4.Memory 	 	 predicted cell type: T.CD4.Naive 	 	 probability: 0.77
-  cell ID:  1 	 	 real cell type: B.Activated 	 	   predicted cell type: B.Activated 	 	 probability: 0.53
-  cell ID:  2 	 	 real cell type: B.Naive 	 	       predicted cell type: B.Naive 	 	     probability: 0.73
-  cell ID:  3 	 	 real cell type: T.CD4.Naive 	 	   predicted cell type: T.CD4.Naive 	 	 probability: 0.78
-  cell ID:  4 	 	 real cell type: T.CD4.Memory 	 	 predicted cell type: T.CD4.Memory 	 	 probability: 0.87
-  cell ID:  5 	 	 real cell type: Mono.CD14 	 	     predicted cell type: Mono.CD14 	 	   probability: 0.95
-  cell ID:  6 	 	 real cell type: B.Naive 	 	       predicted cell type: B.Naive 	 	     probability: 0.78
-  cell ID:  7 	 	 real cell type: Mono.CD14 	 	     predicted cell type: Mono.CD14 	 	   probability: 0.96
-  cell ID:  8 	 	 real cell type: T.CD8.Effector 	 predicted cell type: T.CD8.Effector 	 probability: 0.95
-……
-
-
-::
-
-  cell type ID:  0                 cell type: B.Activated          prec : tensor(72.2454, device='cuda:0') number: 180
-  cell type ID:  1                 cell type: B.Naive              prec : tensor(98.1400, device='cuda:0') number: 802
-  cell type ID:  2                 cell type: DC.Myeloid           prec : tensor(40., device='cuda:0') number: 11
-  cell type ID:  3                 cell type: Mono.CD14            prec : tensor(98.6156, device='cuda:0') number: 639
-  cell type ID:  4                 cell type: Mono.CD16            prec : tensor(74.1379, device='cuda:0') number: 37
-  cell type ID:  5                 cell type: NK                   prec : tensor(97.1820, device='cuda:0') number: 283
-  cell type ID:  6                 cell type: Platelets            prec : tensor(45.4545, device='cuda:0') number: 12
-  cell type ID:  7                 cell type: T.CD4.Memory         prec : tensor(73.3831, device='cuda:0') number: 1189
-  cell type ID:  8                 cell type: T.CD4.Naive          prec : tensor(76.2363, device='cuda:0') number: 1020
-  cell type ID:  9                 cell type: T.CD8.Effector       prec : tensor(83.4451, device='cuda:0') number: 576
-  cell type ID:  10                cell type: T.CD8.Naive          prec : tensor(84.5635, device='cuda:0') number: 299
+You could use the validation set for performance evaluation during tuning. If the size of dataset is larger, the classic Grid Search might take a long time to find out the optimized solution since it needs to be set manually. Bayesian optimisation could be a relatively efficient method without manual operation. If you have enough prior information for datasets or models' expectation, it would be better. The metrics or benchmarks might need to be customised for multimodal sequencing data analysis for different process, such as the correlation visualisation for feature selection process or overall accuracy for classification... 
 
 
 
-::
-
-  # using the trained model for dimension reduction and visualising query data
-  python main_matilda_task.py --rna [queryRNA] --adt [queryADT] --atac [queryATAC] --cty [querycty] --dim_reduce True
-  # Example run
-  python main_matilda_task.py  --rna ../data/TEAseq/test_rna.h5 --adt ../data/TEAseq/test_adt.h5 --atac ../data/TEAseq/test_atac.h5 --cty ../data/TEAseq/test_cty.csv --dim_reduce True --query True
-
-::
-
-  # using the trained model for feature selection
-  python main_matilda_task.py --rna [queryRNA] --adt [queryADT] --atac [queryATAC] --cty [querycty] --fs True
-  # Example run
-  python main_matilda_task.py  --rna ../data/TEAseq/test_rna.h5 --adt ../data/TEAseq/test_adt.h5 --atac ../data/TEAseq/test_atac.h5 --cty ../data/TEAseq/test_cty.csv  --fs True --query True
-
-
-Output: The output, i.e. feature importance scores, will be saved in `./Matilda/output/markers/TEAseq/query/`. 
-
-
-Reference
-------------------------------------------------------------------------------------
-
-[1] Ramaswamy, A. et al. Immune dysregulation and autoreactivity correlate with disease severity in
-SARS-CoV-2-associated multisystem inflammatory syndrome in children. Immunity 54, 1083–
-1095.e7 (2021).
-
-[2] Ma, A., McDermaid, A., Xu, J., Chang, Y. & Ma, Q. Integrative Methods and Practical Challenges
-for Single-Cell Multi-omics. Trends Biotechnol. 38, 1007–1022 (2020).
-
-[3] Swanson, E. et al. Simultaneous trimodal single-cell measurement of transcripts, epitopes, and
-chromatin accessibility using TEA-seq. Elife 10, (2021).
-
-License
-------------------------------------------------------------------------------------
-
-This project is covered under the Apache 2.0 License.
