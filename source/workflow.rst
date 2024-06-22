@@ -18,33 +18,33 @@ The first process of Matilda is the data simulation. As mentioned in the :doc:`D
 
 3. Data augmentaion and balancing
 --------------------------------------
-As mentioned in :doc:`DESIGN`, recalling here. During the model training process, Matilda performs data augmentation and balancing using simulated data from the VAE component. Specifically, Matilda first ranks the cell types in the training dataset by the number of cells in each type. The cell type corresponding to the median number is used as the reference and those that have smaller numbers of cells are augmented to have the same number of cells as the median using VAE simulated single-cell multimodal data for each cell type. Cell types that have larger numbers of cells than the median number are randomly down-sampled to match the median number of cells as well. This strategy helps Matilda to mitigate imbalanced cell type distribution in the data (21) and better learn the molecular features of under-represented and rare cell types.
+As mentioned in :doc:`DESIGN`, recalling here. During the model training process, Matilda performs data augmentation and balancing using simulated data from the VAE component. Specifically, Matilda first ranks the cell types in the training dataset by the number of cells in each type. The cell type corresponding to the median number is used as the reference and those that have smaller numbers of cells are augmented to have the same number of cells as the median using VAE simulated single-cell multimodal data for each cell type. Cell types that have larger numbers of cells than the median number are randomly down-sampled to match the median number of cells as well. This strategy helps Matilda to mitigate imbalanced cell type distribution in the data [1] and better learn the molecular features of under-represented and rare cell types.
 
 4. Dimension Reduction
 --------------------------------------
-During model training, Matilda learns to combine and reduce the feature dimensions of multimodal single-cell omics data to a latent space using its VAE component in the framework. The trained VAE of Matilda thus can be used for multimodal feature integration and dimension re duction of both the training and new data. 
+During model training, Matilda learns to combine and reduce the feature dimensions of multimodal single-cell omics data to a latent space using its VAE component in the framework. The trained VAE of Matilda thus can be used for multimodal feature integration and dimension reduction of both the training and new data. 
 
 5. Classification
 --------------------------------------
-The classification would be implemented after the the learning of latent space, the process would be operated with fully-connected neural network, .
+The cell types classification would be implemented after the the learning of latent space, the process would be operated with fully-connected neural network based on the selected features. The output would be in the form of probability vector including the probability of each class (via softmax function). The classification results would provide information for feature selection.
 
 6. Feature selection 
 --------------------------------------
-Finally, as mentioned in :doc:`DESIGN`, the neural network trained for cell type classification in Matilda can be used for multimodal feature selection using methods such as integrated gradient (IG) descent (22) and saliency procedures (23), and thus can lead to the selection of cell-type-specific features across all available modalities in the datasets. Within the two feature selection methods implemented in Matilda, IG appears to perform slightly better than saliency and is hence the recommended approach in Matilda for feature selection from multimodal single-cell omics data []. 
+Finally, as mentioned in :doc:`DESIGN`, the neural network trained for cell type classification in Matilda can be used for multimodal feature selection using methods such as integrated gradient (IG) descent [2] and saliency procedures [3], and thus can lead to the selection of cell-type-specific features across all available modalities in the datasets. Within the two feature selection methods implemented in Matilda, IG appears to perform slightly better than saliency and is hence the recommended approach in Matilda for feature selection from multimodal single-cell omics data [4]. 
 
 7. Training continue
 -----------------------------
-
+The training process for each epoch would contain the process mentioned before, the simulated data could be used for fine-tune the network as they could be the new input in next epoch. The feature selection would keep learning with the gradient descent. The generation ability and performance would be optimised with appropriate number of epochs for continuous training.
 
 Reference
 --------------
-[1]
+[1] He,H. and Garcia,E.A. (2009) Learning from imbalanced data. IEEE Trans. Knowl. Data Eng., 21, 1263–1284
 
-[2]
+[2] Sundararajan,M., Taly,A. and Yan,Q. (2017) Axiomatic attribution for deep networks. arXiv doi: https://arxiv.org/abs/1703.01365,13 June 2017, preprint: not peer reviewed.
 
-[3]
+[3] Simonyan,K., Vedaldi,A. and Zisserman,A. (2014) Deep inside convolutional networks: visualising image classification models and saliency maps. arXiv doi: https://arxiv.org/abs/1312.6034,19April 2014, preprint: not peer reviewed.
 
-[4]
+[4] Chunlei Liu, Hao Huang, Pengyi Yang, Multi-task learning from multimodal single-cell omics with Matilda, Nucleic Acids Research, Volume 51, Issue 8, 8 May 2023, Page e45, https://doi.org/10.1093/nar/gkad157
 
 
 
