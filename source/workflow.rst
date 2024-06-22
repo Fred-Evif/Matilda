@@ -26,7 +26,7 @@ During model training, Matilda learns to combine and reduce the feature dimensio
 
 5. Classification
 --------------------------------------
-The classification would be implemented after the the learning of latent space, the process would be operated with fully-connected neural network, involved with batch normalisation, dropout and so on.
+The classification would be implemented after the the learning of latent space, the process would be operated with fully-connected neural network, .
 
 6. Feature selection 
 --------------------------------------
