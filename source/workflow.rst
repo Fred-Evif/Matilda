@@ -10,7 +10,7 @@ In this introductory tutorial, we go through the different steps of Matilda's wo
 
 1. Data Loading and Preperation  
 --------------------------------------
-Take CITE-seq as the example,
+Matilda could handle the sequencing data of RNA, ADT and ATAC.
 
 2. Data Simulation, augmentaion and balancing
 -----------------------------------------------
