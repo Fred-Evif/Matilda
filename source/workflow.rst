@@ -1,7 +1,7 @@
 Workflow
 ======================================================
 
-In this introductory tutorial, we go through the different steps of Matilda's workflow.
+In this introductory tutorial, we go through the different steps of a complete Matilda's workflow.
 
 .. image:: main.jpg
    :alt: The framework of Matilda
@@ -14,7 +14,7 @@ Matilda could handle the sequencing data of RNA, ADT and ATAC. It expects raw co
 
 2. Data Simulation, augmentaion and balancing
 -----------------------------------------------
-
+The first process of Matilda is the data simulation, 
 
 3. Dimension Reduction
 --------------------------------------
