@@ -28,14 +28,9 @@ During model training, Matilda learns to combine and reduce the feature dimensio
 --------------------------------------
 The classification would be implemented after the the learning of latent space, the process would be operated with fully-connected neural network, involved with batch normalisation, dropout and so on.
 
-
 6. Feature selection 
 --------------------------------------
 Finally, as mentioned in :doc:`DESIGN`, the neural network trained for cell type classification in Matilda can be used for multimodal feature selection using methods such as integrated gradient (IG) descent (22) and saliency procedures (23), and thus can lead to the selection of cell-type-specific features across all available modalities in the datasets. Within the two feature selection methods implemented in Matilda, IG appears to perform slightly better than saliency and is hence the recommended approach in Matilda for feature selection from multimodal single-cell omics data []. 
-
-Figure 5A, B visualize top-ranked features selected by Matilda using IG for CD14 monocytes and Naive B cells, respectively, in each data modality in the TEA-seq dataset. The RNA and ADT expression levels and the ATAC activity of selected genes across all cell types in the dataset are shown in Figure 5C, D. As expected, these analyses reveal that features selected by Matilda for each data modality show expression specificity towards their respective cell types, demonstrating their potential usage for characterizing cell identity and their underlying molecular programs.
-To evaluate the top features selected by Matilda across multiple data modalities and those selected from RNA modality using popular methods such as t-test and limma (7), and those specifically designed for scRNA-seq (e.g. MAST(8), ROC), and recently proposed deep learning feature selection methods, including PROPOSE (35) and scCapsNet (41), we compared their utility in classifying each cell type in each dataset. We found that cell-type-specific features selected by Matilda from multiple data modalities on average resulted in more accurate discrimination of their respective cell types as shown by the scatter plot and the overall rankings of methods in each dataset (Figure 5Eand Supplementary Figure S8). Within the two feature selection methods implemented in Matilda, IG appears to perform slightly better than saliency and is hence the recommended approach in Matilda for feature selection from multimodal single-cell omics data. Together, these results demonstrate Matilda as a useful approach for feature selection from multiple data modalities for cell type characterization and other downstream analyses.
-
 
 7. Training continue
 -----------------------------
@@ -49,7 +44,7 @@ Reference
 
 [3]
 
-
+[4]
 
 
 
