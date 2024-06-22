@@ -14,7 +14,7 @@ Matilda could handle the sequencing data of RNA, ADT and ATAC. It expects raw co
 
 2. Data Simulation, augmentaion and balancing
 -----------------------------------------------
-The first process of Matilda is the data simulation, 
+The first process of Matilda is the data simulation, which could handle the data augmentation and balancing at the same time. As mentioned in the 
 
 3. Dimension Reduction
 --------------------------------------
