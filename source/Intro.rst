@@ -105,7 +105,7 @@ Argument for performing tasks
   + `--fs`: whether to do cell type feature selection.
   + `--dim_reduce`: whether to do dimension reduction.
   + `--simulation`: whether to do simulation. 
-  + `--simulation_ct`: an integer index for which cell type to simulate. Only be activated when `simulation = True`.
+  + `--simulation_ct`: an index for which cell type to simulate, could be the real type label. "-1" means to simulate all types. Only be activated when `simulation = True`.
   + `--simulation_num`: the number of cells to simulate for the specified cell type. Only be activated when `simulation = True`.
 
 
