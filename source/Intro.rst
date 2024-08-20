@@ -81,6 +81,7 @@ Install via pip:
 Argument 
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
 More details could be viewed in :doc:`Hyper-tun` 
+
 .. note::
 
   The name of arguments are the same no matter which kinds of installation. For example, the hyperparameter 'lr' in the function 'matilda.main_matilda_train.main_train' is equivalent to '--lr' when assigning input in shell.
@@ -122,7 +123,7 @@ After training, the model will be saved in `./Matilda/trained_model/`.
 
 Perform multiple tasks using trained Matilda model. 
 ------------------------------------------------------------------------------------
-After training the model, we can use `main_matilda_task.py` or function `matilda.main_matilda_task.main_task()` to do multiple tasks with different augments.
+After training the model, we can use 'main_matilda_task.py' or function 'matilda.main_matilda_task.main_task()' to do multiple tasks with different augments.
 
 Argument for performing tasks Argument 
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
