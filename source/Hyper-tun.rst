@@ -47,12 +47,11 @@ These hyperparameters are typically the switches of corresponding funtion/proces
 +----------------+-------------+--------------------------------------------------------+
 | query          | False       | The number of neurons for ADT layer                    |
 +----------------+-------------+--------------------------------------------------------+
-| hidden_atac    | 185         | The number of neurons for ATAC layer                   |
+| classification | False       | Classification                                         |
 +----------------+-------------+--------------------------------------------------------+
 | lr             | 0.02        | Learning rate for optimisation                         |
 +----------------+-------------+--------------------------------------------------------+
-| simulation_num | 100         | The number of cells to simulate for the specified cell |
-|                |             | type. Only be activated when `simulation = True`.      |
+| augmentation   | False       | Data Augmentation                                      |
 +----------------+-------------+--------------------------------------------------------+
 | z_dim          | 100         | Dimension of latent space                              |
 +----------------+-------------+--------------------------------------------------------+
