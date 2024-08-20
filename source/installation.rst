@@ -14,7 +14,11 @@ I: Create and activate the conda environment for matilda ::
    conda create -n environment_matilda python=3.7
    conda activate environment_matilda
 
-II: If you have download the document "environment_matilda.yaml" from Github, you could create and activate the conda environment with it ::
+II: If you have download the document "environment_matilda.yaml" from Github_, you could create and activate the conda environment with it 
+
+.. _Github: https://github.com/PYangLab/Matilda/tree/main
+
+::
 
    conda env create -f environment_matilda.yaml
    conda activate environment_matilda
