@@ -1,6 +1,6 @@
 Other functions and classes for constructing the core of Matilda
 =====================================================================
-Generally, the functions and classes here are not used for directly or seperately called in the scripts, as they are the bases of the core functions of Matilda, which could be reviewed in the :doc:`Hyper-tun`.
+Generally, the functions and classes here are not used for directly or seperately called in the scripts, as they are the bases of the core functions of Matilda, which could be reviewed in the :doc:`Hyper-tun`. You could review roughly for understanding Matilda.
 
 In the scripts 'model_rna'
 -----------------------------
