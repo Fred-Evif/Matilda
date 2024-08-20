@@ -5,9 +5,18 @@ In this part, we go through the basic steps for tuning the hyperparameters of  M
 
 Before Tuning the hyperparameter, the data should be appropriately prepared and loaded. The process could be referred to the corresponding parts in :doc:`Intro`.
 
+Main Functions for Matilda
+-------------------------------------------------------
+The following functions are the core of Matilda. They have covered all of the function for Matilda. Their hyperparameters are controlling the distinct process or functions for Matilda.
+
+..::
+  main_task(rna,adt,atac,cty,)
+
+Other classes or functions that help construct the main functions for matilda could be viewed in the sections of :doc:`Guide`. Generally, they are not directly/seperately used or called for other purposes.
+
+
 Tunable hyperparameters
 -------------------------------------------------------
-could be viewed in the sections of :doc:`Guide`.
 
 +----------------+--------------------+------+--------------------------------------------------------+
 | Tunable        | Default            | Input|      Basic                                             |
