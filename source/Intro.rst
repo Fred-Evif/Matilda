@@ -45,7 +45,7 @@ Training and testing on demo dataset will cost no more than 1 minute with GPU.
 Running Matilda with the example dataset. (Install via clonning)
 --------------------------------------------------------------------
 
-Training the Matilda model (see Arguments section for more details). 
+Training the Matilda model.
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
 
 ::
@@ -57,7 +57,7 @@ Training the Matilda model (see Arguments section for more details).
   # Example run
   python main_matilda_train.py --rna ../data/TEAseq/train_rna.h5 --adt ../data/TEAseq/train_adt.h5 --atac ../data/TEAseq/train_atac.h5 --cty ../data/TEAseq/train_cty.csv
 
-Argument
+Argument (More details could be viewed in :doc:`Hyper-tun` )
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
 
 .. note:: Training dataset information
@@ -100,8 +100,8 @@ Perform multiple tasks using trained Matilda model. (Install via clonning)
 
 After training the model, we can use `main_matilda_task.py` to do multiple tasks with different augments.
 
-Argument for performing tasks
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
+Argument for performing tasks Argument (More details could be viewed in :doc:`Hyper-tun`)
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
 
 .. note::
 
@@ -227,7 +227,7 @@ Output: The output, i.e. feature importance scores, will be saved in `./Matilda/
 Running Matilda with the example dataset. (Install via pip)
 --------------------------------------------------------------------
 
-Training the Matilda model (see Arguments section for more details). 
+Training the Matilda model. 
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
 
 ::
@@ -245,7 +245,7 @@ Training the Matilda model (see Arguments section for more details).
 
   matilda.main_matilda_train.main_train(rna_path,adt_path,atac_path,cty_path)
 
-Argument
+Argument (More details could be viewed in :doc:`Hyper-tun`)
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
 
 .. note:: Training dataset information
@@ -288,7 +288,7 @@ Perform multiple tasks using trained Matilda model. (Install via pip)
 
 After training the model, we can use function `matilda.main_matilda_task.main_task()` to do multiple tasks with different augments.
 
-Argument for performing tasks
+Argument for performing tasks (More details could be viewed in :doc:`Hyper-tun`)
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
 
 .. note::
