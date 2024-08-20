@@ -28,7 +28,7 @@ Install Matilda via clonning/pip
 
 .. note:: 
 
-   Remeber, the implementing codes is different from two kinds of installation. We recommand 'pip' for directly applying Matilda via any Python explainer on the scripts (via package import).
+   Remeber, the implementing codes is different from two kinds of installation. We recommand 'pip' If you want to directly apply Matilda via any Python explainer on the scripts (via package import).
 
 I: Otain Matilda by clonning the github repository: ::
 
