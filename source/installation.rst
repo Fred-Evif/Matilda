@@ -3,7 +3,7 @@ Installation
 
 Matilda is developed using PyTorch 1.9.1 and requires >=1 GPU to run. We recommend using conda enviroment to install and run Matilda. Note the following installation code snippets were tested on a Ubuntu system (v20.04) with NVIDIA GeForce 3090 GPU. The installation process needs about 5 minutes.
 
-We offer two kinds of installation, install by clonning the github repository & install via 'pip install' command. The implementing codes of Matilda would be slightly different between two kinds of installation. We have offered tutorials for both version in section 'Implementing Matilda'. If you want to apply Matilda directly via any Python explainer on the scripts (via package import), especially the jupyter notebook. we recommand you to install via 'pip install' in your activated environment.
+We offer two kinds of installation, install by clonning the github repository & install via 'pip install' command. The implementing codes of Matilda would be slightly different between two kinds of installation. We have offered tutorials for both version in section 'Tutorials-Implementing Matilda'. If you want to apply Matilda directly via any Python explainer on the scripts (via package import), especially the jupyter notebook. we recommand you to install via 'pip install' in your activated environment.
 
 Environment setting
 ------------------------
