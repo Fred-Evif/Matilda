@@ -137,7 +137,7 @@ ii) Dimension Reduction
   # Example run
   python main_matilda_task.py --rna ../data/TEAseq/train_rna.h5 --adt ../data/TEAseq/train_adt.h5 --atac ../data/TEAseq/train_atac.h5 --cty ../data/TEAseq/train_cty.csv --dim_reduce True
   
-  Output: The output will be saved in `./Matilda/output/dim_reduce/TEAseq/reference/`. To generate UMAP plots and 4 clustering metrices, i.e., ARI, NMI, FM, Jaccard, for the latent space using R, run `./Matilda/qc/visualize_latent_space.Rmd`. The UMAPs are:
+Output: The output will be saved in `./Matilda/output/dim_reduce/TEAseq/reference/`. To generate UMAP plots and 4 clustering metrices, i.e., ARI, NMI, FM, Jaccard, for the latent space using R, run `./Matilda/qc/visualize_latent_space.Rmd`. The UMAPs are:
 
 .. image:: visualisation.jpg
    :scale: 30%
@@ -236,11 +236,13 @@ Training the Matilda model (see Arguments section for more details).
 
   # training the matilda model
   matilda.main_matilda_train.main_train(rna,adt,atac,cty)
+
   # Example run
   rna_path='D:/data/TEAseq/train_rna.h5'
   adt_path='D:/data/TEAseq/train_adt.h5'
   atac_path='D:/data/TEAseq/train_atac.h5'
   cty_path='D:/data/TEAseq/train_cty.csv'
+
   matilda.main_matilda_train.main_train(rna_path,adt_path,atac_path,cty_path)
 
 Argument
@@ -303,10 +305,12 @@ Argument for performing tasks
 ::
 
   import matilda
+
   rna_path='D:/data/TEAseq/train_rna.h5'
   adt_path='D:/data/TEAseq/train_adt.h5'
   atac_path='D:/data/TEAseq/train_atac.h5'
   cty_path='D:/data/TEAseq/train_cty.csv'
+
   test_rna_path='D:/data/TEAseq/test_rna.h5'
   test_adt_path='D:/data/TEAseq/test_adt.h5'
   test_atac_path='D:/data/TEAseq/test_atac.h5'
@@ -318,7 +322,6 @@ Argument for performing tasks
 i) Data Simulation 
 ::
 
-  import matilda
   # Using the trained model for data simulation, example:
   matilda.main_matilda_task.main_task(rna_path,adt_path,atac_path,cty_path,simulation=True,simulation_ct=1.simulation_num=200)
 
@@ -337,7 +340,7 @@ ii) Dimension Reduction
   matilda.main_matilda_task.main_task(rna_path,adt_path,atac_path,cty_path,dim_reduce=True)
 
   
-  Output: The results will be saved in `./Matilda/output/dim_reduce/TEAseq/reference/`. To generate UMAP plots and 4 clustering metrices, i.e., ARI, NMI, FM, Jaccard, for the latent space using R, run `./Matilda/qc/visualize_latent_space.Rmd`. The UMAPs are:
+Output: The results will be saved in `./Matilda/output/dim_reduce/TEAseq/reference/`. To generate UMAP plots and 4 clustering metrices, i.e., ARI, NMI, FM, Jaccard, for the latent space using R, run `./Matilda/qc/visualize_latent_space.Rmd`. The UMAPs are:
 
 .. image:: visualisation.jpg
    :scale: 30%
