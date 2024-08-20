@@ -1,7 +1,11 @@
 Implementing Matilda 
 ========================================
 
-In this tutorial, we go through the basic steps for implementing Matilda on multimodal dataset. It is a quick example with specified dataset. The commands below would need to be run in settled conda environment, which could be referred to the :doc:`installation` part.
+In this tutorial, we go through the basic steps for implementing Matilda on multimodal dataset. It is a quick example with specified dataset. The commands below would need to be run in settled conda environment, which could be referred to the :doc:`installation` part. 
+
+There are two kinds of codes for applying Matilda: applying Matilda through shell/Python explainer (e.g. Jupyter notebook), you should use the correct one corresponding to your installation method, which could also be reviewed in :doc:`installation`. And there is a complete example for implementing Matilda with only shell's style by coding in (.ipynb) script on the Colab_.
+
+.._Colab: www.baidu.com
 
 Preparing intput for Matilda
 ------------------------------------------
@@ -38,8 +42,8 @@ It contain three modalities at the same time. Therefore, the datasets with the s
 Users can prepare the example dataset as input for Matilda or use their own datasets.
 Training and testing on demo dataset will cost no more than 1 minute with GPU.
 
-Running Matilda with the example dataset
-------------------------------------------
+Running Matilda with the example dataset. (Install via clonning)
+--------------------------------------------------------------------
 
 Training the Matilda model (see Arguments section for more details). 
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
@@ -91,7 +95,7 @@ Argument
 
 Note: after training, the model will be saved in `./Matilda/trained_model/`.
 
-Perform multiple tasks using trained Matilda model.
+Perform multiple tasks using trained Matilda model. (Install via clonning)
 ------------------------------------------------------------------------------------
 
 After training the model, we can use `main_matilda_task.py` to do multiple tasks with different augments.
@@ -214,6 +218,193 @@ Output: The output will be saved in `./Matilda/output/dim_reduce/TEAseq/query/`.
 
 
 Output: The output, i.e. feature importance scores, will be saved in `./Matilda/output/markers/TEAseq/query/`. 
+
+
+Running Matilda with the example dataset. (Install via pip)
+--------------------------------------------------------------------
+
+Training the Matilda model (see Arguments section for more details). 
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
+
+::
+
+  import matilda
+
+  # training the matilda model
+  matilda.main_matilda_train.main_train(rna,adt,atac,cty)
+  # Example run
+  rna_path='D:/data/TEAseq/train_rna.h5'
+  adt_path='D:/data/TEAseq/train_adt.h5'
+  atac_path='D:/data/TEAseq/train_atac.h5'
+  cty_path='D:/data/TEAseq/train_cty.csv'
+  matilda.main_matilda_train.main_train(rna_path,adt_path,atac_path,cty_path)
+
+Argument
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
+
+.. note:: Training dataset information
+   
+   - `rna`: path to training data RNA modality.
+
+   - `adt`: path to training data ADT modality (can be null if ATAC is provided).
+
+   - `atac`: path to training data ATAC modality (can be null if ADT is provided). Note ATAC data should be summarised to the gene level as "gene activity score".
+
+   - `cty`: path to the labels of training data.
+
+.. note:: Training and model config
+   
+   - `batch_size`: Batch size (set as 64 by default)
+
+   - `epochs`: Number of epochs.
+
+   - `lr`: Learning rate.
+
+   - `z_dim`: Dimension of latent space.
+
+   - `hidden_rna`: Dimension of RNA branch.
+
+   - `hidden_adt`: Dimension of ADT branch.
+
+   - `hidden_atac`: Dimension of ATAC branch.
+
+   - `z_dim`: Dimension of latent space.
+
+.. note:: Other config
+   
+   - `seed`: The random seed for training.
+   - `augmentation`: Whether to augment simulated data.
+
+Note: after training, the model will be saved in `./Matilda/trained_model/`.
+
+Perform multiple tasks using trained Matilda model. (Install via pip)
+------------------------------------------------------------------------------------
+
+After training the model, we can use function `matilda.main_matilda_task.main_task()` to do multiple tasks with different augments.
+
+Argument for performing tasks
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
+
+.. note::
+
+  + `classification`: whether to do cell type classification.
+  + `fs`: whether to do cell type feature selection.
+  + `dim_reduce`: whether to do dimension reduction.
+  + `simulation`: whether to do simulation. 
+  + `simulation_ct`: an index for which cell type to simulate, could be the real type label. "-1" means to simulate all types. Only be activated when `simulation = True`.
+  + `simulation_num`: the number of cells to simulate for the specified cell type. Only be activated when `simulation = True`.
+
+0) Define the path of Training data, Test data & import Matilda
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+::
+
+  import matilda
+  rna_path='D:/data/TEAseq/train_rna.h5'
+  adt_path='D:/data/TEAseq/train_adt.h5'
+  atac_path='D:/data/TEAseq/train_atac.h5'
+  cty_path='D:/data/TEAseq/train_cty.csv'
+  test_rna_path='D:/data/TEAseq/test_rna.h5'
+  test_adt_path='D:/data/TEAseq/test_adt.h5'
+  test_atac_path='D:/data/TEAseq/test_atac.h5'
+  test_cty_path='D:/data/TEAseq/test_cty.csv'
+
+1) Multi-task on the training data
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
+
+i) Data Simulation ::
+
+  import matilda
+  # Using the trained model for data simulation, example:
+  matilda.main_matilda_task.main_task(rna_path,adt_path,atac_path,cty_path,simulation=True,simulation_ct=1.simulation_num=200)
+
+
+Output: The simulation results will be saved in `./Matilda/output/simulation_result/TEAseq/reference/`. To generate UMAP plots for the simulated data using R, run `./Matilda/qc/visualize_simulated_data.Rmd`. The UMAPs are:
+
+.. image:: simulation_anchor.jpg
+   :scale: 40%
+   :align: center
+
+
+ii) Dimension Reduction ::
+
+  # Using the trained model for data dimension reduction and visualisation, example:
+  matilda.main_matilda_task.main_task(rna_path,adt_path,atac_path,cty_path,dim_reduce=True)
+
+  
+  Output: The results will be saved in `./Matilda/output/dim_reduce/TEAseq/reference/`. To generate UMAP plots and 4 clustering metrices, i.e., ARI, NMI, FM, Jaccard, for the latent space using R, run `./Matilda/qc/visualize_latent_space.Rmd`. The UMAPs are:
+
+.. image:: visualisation.jpg
+   :scale: 30%
+   :align: center
+
+iii) Feature Selection ::
+
+  # Using the trained model for feature selection, example:
+  matilda.main_matilda_task.main_task(rna_path,adt_path,atac_path,cty_path,fs=True)
+
+Output: The results, i.e. feature importance scores, will be saved in `./Matilda/output/marker/TEAseq/reference/`. 
+
+
+2) Multi-task on the query data
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
+
+i) Classification ::
+
+  # Using the trained model for classifying query data, example:
+  matilda.main_matilda_task.main_task(test_rna_path,test_adt_path,test_atac_path,test_cty_path,classification=True,query=True)
+
+
+Output: The results will be saved in `./Matilda/output/classification/TEAseq/query/`.
+
+::
+
+  cell ID:  0 	 	 real cell type: T.CD4.Memory 	 	 predicted cell type: T.CD4.Naive 	 	 probability: 0.77
+  cell ID:  1 	 	 real cell type: B.Activated 	 	   predicted cell type: B.Activated 	 	 probability: 0.53
+  cell ID:  2 	 	 real cell type: B.Naive 	 	       predicted cell type: B.Naive 	 	     probability: 0.73
+  cell ID:  3 	 	 real cell type: T.CD4.Naive 	 	   predicted cell type: T.CD4.Naive 	 	 probability: 0.78
+  cell ID:  4 	 	 real cell type: T.CD4.Memory 	 	 predicted cell type: T.CD4.Memory 	 	 probability: 0.87
+  cell ID:  5 	 	 real cell type: Mono.CD14 	 	     predicted cell type: Mono.CD14 	 	   probability: 0.95
+  cell ID:  6 	 	 real cell type: B.Naive 	 	       predicted cell type: B.Naive 	 	     probability: 0.78
+  cell ID:  7 	 	 real cell type: Mono.CD14 	 	     predicted cell type: Mono.CD14 	 	   probability: 0.96
+  cell ID:  8 	 	 real cell type: T.CD8.Effector 	 predicted cell type: T.CD8.Effector 	 probability: 0.95
+……
+
+
+::
+
+  cell type ID:  0                 cell type: B.Activated          prec : tensor(72.2454, device='cuda:0') number: 180
+  cell type ID:  1                 cell type: B.Naive              prec : tensor(98.1400, device='cuda:0') number: 802
+  cell type ID:  2                 cell type: DC.Myeloid           prec : tensor(40., device='cuda:0') number: 11
+  cell type ID:  3                 cell type: Mono.CD14            prec : tensor(98.6156, device='cuda:0') number: 639
+  cell type ID:  4                 cell type: Mono.CD16            prec : tensor(74.1379, device='cuda:0') number: 37
+  cell type ID:  5                 cell type: NK                   prec : tensor(97.1820, device='cuda:0') number: 283
+  cell type ID:  6                 cell type: Platelets            prec : tensor(45.4545, device='cuda:0') number: 12
+  cell type ID:  7                 cell type: T.CD4.Memory         prec : tensor(73.3831, device='cuda:0') number: 1189
+  cell type ID:  8                 cell type: T.CD4.Naive          prec : tensor(76.2363, device='cuda:0') number: 1020
+  cell type ID:  9                 cell type: T.CD8.Effector       prec : tensor(83.4451, device='cuda:0') number: 576
+  cell type ID:  10                cell type: T.CD8.Naive          prec : tensor(84.5635, device='cuda:0') number: 299
+
+
+
+ii) Dimension Reduction ::
+
+  # using the trained model for dimension reduction and visualising query data, example:
+  matilda.main_matilda_task.main_task(test_rna_path,test_adt_path,test_atac_path,test_cty_path,dim_reduce=True,query=True)
+
+
+Output: The results will be saved in `./Matilda/output/dim_reduce/TEAseq/query/`. To generate UMAP plots and 4 clustering metrices, i.e., ARI, NMI, FM, Jaccard, for the latent space using R, run `./Matilda/qc/visualize_latent_space.Rmd`. The UMAPs are:
+
+.. image:: visualisation2.png
+   :scale: 50%
+   :align: center
+
+iii) Feature Selection::
+
+  # using the trained model for feature selection
+  matilda.main_matilda_task.main_task(test_rna_path,test_adt_path,test_atac_path,test_cty_path,fs=True,query=True)
+
+
+Output: The results, i.e. feature importance scores, will be saved in `./Matilda/output/markers/TEAseq/query/`. 
 
 
 Reference
