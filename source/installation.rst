@@ -3,42 +3,35 @@ Installation
 
 Matilda is developed using PyTorch 1.9.1 and requires >=1 GPU to run. We recommend using conda enviroment to install and run Matilda. Note the following installation code snippets were tested on a Ubuntu system (v20.04) with NVIDIA GeForce 3090 GPU. The installation process needs about 5 minutes.
 
-Install via conda
-------------------
+We offer two kinds of installation, install by clonning the github repository & install via 'pip install' command. The implementing codes of Matilda would be slightly different between two kinds of installation. We have offered tutorials for both version in section 'Implementing Matilda'. If you want to apply Matilda directly via any Python explainer on the scripts (via package import), especially the jupyter notebook. we recommand you to install via 'pip install' in your activated environment.
+
+Environment setting
+------------------------
 We assume conda is installed. You can use the provided environment or install the environment by yourself accoring to your hardware settings. 
 
-I: Installation using provided environment
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-
-Step 1: Create and activate the conda environment for matilda using our provided file ::
-
-   conda env create -f environment_matilda.yaml
-   conda activate environment_matilda
-
-Step 2:
-Otain Matilda by clonning the github repository: ::
-
-   git clone https://github.com/liuchunlei0430/Matilda.git
-
-
-II: Installation by youself
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-
-Step 1:
-Create and activate the conda environment for matilda ::
+I: Create and activate the conda environment for matilda ::
 
    conda create -n environment_matilda python=3.7
    conda activate environment_matilda
 
-Step 2:
-Otain Matilda by clonning the github repository: ::
+II: If you have download the document "environment_matilda.yaml" from Github, you could create and activate the conda environment with it ::
+
+   conda env create -f environment_matilda.yaml
+   conda activate environment_matilda
+
+Install Matilda via clonning/pip
+----------------------------------
+
+.. note:: 
+
+   Remeber, the implementing codes is different from two kinds of installation. We recommand 'pip' for directly applying Matilda via any Python explainer on the scripts (via package import).
+
+I: Otain Matilda by clonning the github repository: ::
 
    git clone https://github.com/liuchunlei0430/Matilda.git
 
 
-Install via pip 
------------------
-Install Matilda directly via Command Prompt in your activated environment with the following codes: ::
+II: Install Matilda directly via Command Prompt in your activated environment with the following codes: ::
 
    pip install Matilda
 
