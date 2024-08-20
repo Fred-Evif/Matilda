@@ -300,7 +300,7 @@ Argument for performing tasks
   + `simulation_ct`: an index for which cell type to simulate, could be the real type label. "-1" means to simulate all types. Only be activated when `simulation = True`.
   + `simulation_num`: the number of cells to simulate for the specified cell type. Only be activated when `simulation = True`.
 
-0) Define the path of Training data, Test data & import Matilda
+0) import Matilda & Define the path of Training data, Test data 
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ::
 
