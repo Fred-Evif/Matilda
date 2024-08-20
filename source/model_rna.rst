@@ -1,5 +1,5 @@
-Script-explanation: 'model_rna'
-====================================
+Other functions and classes for constructing the core of Matilda
+=====================================================================
 
 In the scripts 'model_rna'
 -----------------------------
