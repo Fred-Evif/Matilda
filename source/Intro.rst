@@ -115,6 +115,7 @@ Argument for performing tasks
 
 1) Multi-task on the training data
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
+i) Data Simulation 
 ::
 
   # using the trained model for data simulation
@@ -128,7 +129,7 @@ Output: The output will be saved in `./Matilda/output/simulation_result/TEAseq/r
    :scale: 40%
    :align: center
 
-
+ii) Dimension Reduction 
 ::
 
   # using the trained model for data dimension reduction and visualisation
@@ -142,6 +143,7 @@ Output: The output will be saved in `./Matilda/output/simulation_result/TEAseq/r
    :scale: 30%
    :align: center
 
+iii) Feature Selection 
 ::
 
   # using the trained model for feature selection
@@ -155,6 +157,7 @@ Output: The output, i.e. feature importance scores, will be saved in `./Matilda/
 2) Multi-task on the query data
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
 
+iii) Classification 
 ::
 
   # using the trained model for classifying query data
@@ -194,7 +197,7 @@ Output: The output will be saved in `./Matilda/output/classification/TEAseq/quer
   cell type ID:  10                cell type: T.CD8.Naive          prec : tensor(84.5635, device='cuda:0') number: 299
 
 
-
+ii) Dimension Reduction 
 ::
 
   # using the trained model for dimension reduction and visualising query data
@@ -209,6 +212,7 @@ Output: The output will be saved in `./Matilda/output/dim_reduce/TEAseq/query/`.
    :scale: 50%
    :align: center
 
+iii) Feature Selection 
 ::
 
   # using the trained model for feature selection
@@ -311,7 +315,8 @@ Argument for performing tasks
 1) Multi-task on the training data
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
 
-i) Data Simulation ::
+i) Data Simulation 
+::
 
   import matilda
   # Using the trained model for data simulation, example:
@@ -325,7 +330,8 @@ Output: The simulation results will be saved in `./Matilda/output/simulation_res
    :align: center
 
 
-ii) Dimension Reduction ::
+ii) Dimension Reduction 
+::
 
   # Using the trained model for data dimension reduction and visualisation, example:
   matilda.main_matilda_task.main_task(rna_path,adt_path,atac_path,cty_path,dim_reduce=True)
@@ -337,7 +343,8 @@ ii) Dimension Reduction ::
    :scale: 30%
    :align: center
 
-iii) Feature Selection ::
+iii) Feature Selection 
+::
 
   # Using the trained model for feature selection, example:
   matilda.main_matilda_task.main_task(rna_path,adt_path,atac_path,cty_path,fs=True)
@@ -348,7 +355,8 @@ Output: The results, i.e. feature importance scores, will be saved in `./Matilda
 2) Multi-task on the query data
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
 
-i) Classification ::
+i) Classification 
+::
 
   # Using the trained model for classifying query data, example:
   matilda.main_matilda_task.main_task(test_rna_path,test_adt_path,test_atac_path,test_cty_path,classification=True,query=True)
@@ -386,7 +394,8 @@ Output: The results will be saved in `./Matilda/output/classification/TEAseq/que
 
 
 
-ii) Dimension Reduction ::
+ii) Dimension Reduction 
+::
 
   # using the trained model for dimension reduction and visualising query data, example:
   matilda.main_matilda_task.main_task(test_rna_path,test_adt_path,test_atac_path,test_cty_path,dim_reduce=True,query=True)
@@ -398,7 +407,8 @@ Output: The results will be saved in `./Matilda/output/dim_reduce/TEAseq/query/`
    :scale: 50%
    :align: center
 
-iii) Feature Selection::
+iii) Feature Selection
+::
 
   # using the trained model for feature selection
   matilda.main_matilda_task.main_task(test_rna_path,test_adt_path,test_atac_path,test_cty_path,fs=True,query=True)
