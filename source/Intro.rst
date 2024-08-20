@@ -157,7 +157,7 @@ Output: The output, i.e. feature importance scores, will be saved in `./Matilda/
 2) Multi-task on the query data
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
 
-iii) Classification 
+i) Classification 
 ::
 
   # using the trained model for classifying query data
