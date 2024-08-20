@@ -10,6 +10,7 @@ Main Functions for Matilda
 The following functions are the core of Matilda. They have covered all of the function for Matilda. Their hyperparameters are controlling the distinct process or functions for Matilda. The detailed information of their hyperparameter could be viewed in the following two parts in this page.
 
 .. ::
+
   main_task(rna,adt,atac,cty,)
 
 Other classes or functions that help construct the main functions for matilda could be viewed in the sections of :doc:`Guide`. Generally, they are not directly/seperately used or called for other purposes.
@@ -54,7 +55,7 @@ Tunable hyperparameters
 
 Functional hyperparameters
 -------------------------------------------------------
-These hyperparameters are typically the switches of corresponding funtion/process. They are all Bool type.
+These hyperparameters are typically the switches of corresponding funtion/process. They are all Bool type. You could set as True for switching on all the functions at the same time in one completed process.
 
 +----------------+-------------+--------------------------------------------------------+
 | Functional     | Default     |      Controlling                                       |
