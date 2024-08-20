@@ -7,9 +7,9 @@ Before Tuning the hyperparameter, the data should be appropriately prepared and 
 
 Main Functions for Matilda
 -------------------------------------------------------
-The following functions are the core of Matilda. They have covered all of the function for Matilda. Their hyperparameters are controlling the distinct process or functions for Matilda.
+The following functions are the core of Matilda. They have covered all of the function for Matilda. Their hyperparameters are controlling the distinct process or functions for Matilda. The detailed information of their hyperparameter could be viewed in the following two parts in this page.
 
-..::
+.. ::
   main_task(rna,adt,atac,cty,)
 
 Other classes or functions that help construct the main functions for matilda could be viewed in the sections of :doc:`Guide`. Generally, they are not directly/seperately used or called for other purposes.
