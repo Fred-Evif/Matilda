@@ -112,7 +112,6 @@ Training and model config
 
    - `--hidden_atac`: Dimension of ATAC branch.
 
-   - `--z_dim`: Dimension of latent space.
 
 Other config
    
