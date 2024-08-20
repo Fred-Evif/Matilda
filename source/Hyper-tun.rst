@@ -7,7 +7,7 @@ Before Tuning the hyperparameter, the data should be appropriately prepared and 
 
 Tunable hyperparameters
 -------------------------------------------------------
-The corresponding functions of who may require these hyperparamters or other functional hyperparameters (decide whether applying specific processes) could be viewed in the sections of :doc:`Guide`.
+could be viewed in the sections of :doc:`Guide`.
 
 +----------------+-------------+------+--------------------------------------------------------+
 | Tunable        | Default     | Input|      Basic                                             |
@@ -30,6 +30,34 @@ The corresponding functions of who may require these hyperparamters or other fun
 +----------------+-------------+------+--------------------------------------------------------+
 | z_dim          | 100         | int  | Dimension of latent space                              |
 +----------------+-------------+------+--------------------------------------------------------+
+
+Functional hyperparameters
+-------------------------------------------------------
+These hyperparameters are typically the switches of corresponding funtion/process. They are all Bool type.
+
++----------------+-------------+--------------------------------------------------------+
+| Functional     | Default     |      Controlling                                       |
+| hyperparameter | value       |      Function/process                                  |
++================+=============+========================================================+
+| dim_reduce     | False       | Dimension reduction                                    |
++----------------+-------------+--------------------------------------------------------+
+| fs             | False       | Feature selection                                      |
++----------------+-------------+--------------------------------------------------------+
+| simulation     | False       | Data simulation                                        |
++----------------+-------------+--------------------------------------------------------+
+| query          | False       | The number of neurons for ADT layer                    |
++----------------+-------------+--------------------------------------------------------+
+| hidden_atac    | 185         | The number of neurons for ATAC layer                   |
++----------------+-------------+--------------------------------------------------------+
+| lr             | 0.02        | Learning rate for optimisation                         |
++----------------+-------------+--------------------------------------------------------+
+| simulation_num | 100         | The number of cells to simulate for the specified cell |
+|                |             | type. Only be activated when `simulation = True`.      |
++----------------+-------------+--------------------------------------------------------+
+| z_dim          | 100         | Dimension of latent space                              |
++----------------+-------------+--------------------------------------------------------+
+
+
 
 Tuning strategies and methods
 -------------------------------------------------------
