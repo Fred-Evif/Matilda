@@ -37,7 +37,7 @@ I: Otain Matilda by clonning the github repository: ::
 
 II: Install Matilda directly via Command Prompt in your activated environment with the following codes: ::
 
-   pip install Matilda
+   pip install matilda-sc
 
 
 Install required packages
