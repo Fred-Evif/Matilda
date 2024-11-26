@@ -1,5 +1,4 @@
 import os
-import parser
 import argparse
 
 import pandas as pd
@@ -15,7 +14,7 @@ from torch.autograd import Variable
 
 from learn.model import CiteAutoencoder_CITEseq, CiteAutoencoder_SHAREseq, CiteAutoencoder_TEAseq
 from learn.train import train_model
-from util import setup_seed, MyDataset,ToTensor, read_h5_data, read_fs_label, get_vae_simulated_data_from_sampling, get_encodings, compute_zscore, compute_log2,save_checkpoint
+from util import setup_seed, MyDataset,ToTensor, real_label, read_h5_data, read_fs_label, get_vae_simulated_data_from_sampling, get_encodings, compute_zscore, compute_log2,save_checkpoint
 
 parser = argparse.ArgumentParser("Matilda")
 parser.add_argument('--seed', type=int, default=1, help='seed')
@@ -209,15 +208,18 @@ if args.augmentation == True:
         new_label = torch.cat((new_label,reconstructed_label.to(device)),0)
         j = j+1               
 
-if not os.path.exists(model_save_path):
-    os.mkdir(model_save_path)
-      
-#######load the model trained before augmentation#########
-checkpoint_tar = os.path.join(model_save_path, 'model_best.pth.tar')
-if os.path.exists(checkpoint_tar):
-    checkpoint = torch.load(checkpoint_tar)
-    model.load_state_dict(checkpoint['state_dict'], strict=True)
-    print("load successfully")
+
+#######load the model#########
+#######build model#########
+if mode == "CITEseq":
+	model = CiteAutoencoder_CITEseq(nfeatures_rna, nfeatures_adt, args.hidden_rna, args.hidden_adt, args.z_dim, classify_dim)
+elif mode == "SHAREseq":
+	model = CiteAutoencoder_SHAREseq(nfeatures_rna, nfeatures_atac, args.hidden_rna, args.hidden_atac, args.z_dim, classify_dim)
+elif mode == "TEAseq":
+	model = CiteAutoencoder_TEAseq(nfeatures_rna, nfeatures_adt, nfeatures_atac, args.hidden_rna, args.hidden_adt, args.hidden_atac, args.z_dim, classify_dim)
+
+#model = nn.DataParallel(model).to(device) #multi gpu
+model = model.to(device) #one gpu
 
 ############process new data after augmentation###########
 train_transformed_dataset = MyDataset(new_data, new_label)
@@ -233,7 +235,6 @@ if os.path.exists(checkpoint_tar):
 model,acc2,num1,train_num = train_model(model, train_dl, test_dl, lr=args.lr/10, epochs=int(args.epochs/2),classify_dim=classify_dim,best_top1_acc=0, save_path=model_save_path,feature_num=feature_num)
 
 
-
-    
-            
-
+transform_real_label = real_label(args.cty, classify_dim)
+pd.DataFrame(transform_real_label, columns=['CellType']).to_csv("real_cty.csv", index=False, header=False)
+ 

@@ -1,5 +1,4 @@
 import os
-import parser
 import argparse
 
 import pandas as pd
@@ -152,12 +151,11 @@ if args.augmentation == True:
 filename = os.path.join('../trained_model/TEAseq/simulation_model_best.pth.tar')
 torch.save({'state_dict': model.state_dict()}, filename)
       
-#######load the model trained before augmentation#########
-checkpoint_tar = os.path.join(model_save_path, 'model_best.pth.tar')
-if os.path.exists(checkpoint_tar):
-    checkpoint = torch.load(checkpoint_tar)
-    model.load_state_dict(checkpoint['state_dict'], strict=True)
-    print("load successfully")
+#######load the model #########
+model = CiteAutoencoder(nfeatures_rna, args.hidden_rna, args.z_dim, classify_dim)
+
+#model = nn.DataParallel(model).to(device) #multi gpu
+model = model.to(device) #one gpu
 
 ############process new data after augmentation###########
 train_transformed_dataset = MyDataset(new_data, new_label)
