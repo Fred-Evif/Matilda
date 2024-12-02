@@ -67,7 +67,7 @@ Install via pip:
   import matilda
 
   # training the matilda model
-  matilda.main_matilda_train.main_train(rna,adt,atac,cty)
+  # matilda.main_matilda_train.main_train(rna,adt,atac,cty)
 
   # Example run
   rna_path='D:/data/TEAseq/train_rna.h5'
