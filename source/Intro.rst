@@ -76,6 +76,10 @@ Install via pip:
   cty_path='D:/data/TEAseq/train_cty.csv'
 
   matilda.main_matilda_train.main_train(rna_path,adt_path,atac_path,cty_path)
+  # CITE-seq
+  # matilda.main_matilda_train.main_train(rna_path,adt_path,atac_path="NULL",cty_path)
+  # SHARE-seq
+  # matilda.main_matilda_train.main_train(rna_path,adt_path="NULL",atac_path,cty_path)
 
 
 Argument 
