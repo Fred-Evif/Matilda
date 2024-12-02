@@ -9,7 +9,7 @@ In this tutorial, we go through the basic steps for implementing Matilda on mult
 
 And there is a complete example for implementing Matilda with only shell's style by coding in (.ipynb) script on the Colab_.
 
-.. _Colab: www.baidu.com
+.. _Colab: https://colab.research.google.com/drive/1aSU1Oi0ecBthcG27FvvKodxBg22B7Alo?usp=sharing
 
 Preparing intput for Matilda
 ------------------------------------------
