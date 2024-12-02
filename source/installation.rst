@@ -32,8 +32,7 @@ Install Matilda via clonning/pip
 
 I: Otain Matilda by clonning the github repository: ::
 
-   git clone https://github.com/liuchunlei0430/Matilda.git
-
+   git clone https://github.com/PYangLab/Matilda.git
 
 II: Install Matilda directly via Command Prompt in your activated environment with the following codes: ::
 
