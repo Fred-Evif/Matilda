@@ -163,13 +163,13 @@ Install via clonning:
   # using the trained model for data simulation
   # python main_matilda_task.py  --rna [trainRNA] --adt [trainADT] --atac [trainATAC] --cty [traincty] --simulation True --simulation_ct -1 --simulation_num 200
   # Example run
-  python main_matilda_task.py --rna ../data/TEAseq/train_rna.h5 --adt ../data/TEAseq/train_adt.h5 --atac ../data/TEAseq/train_atac.h5 --cty ../data/TEAseq/train_cty.csv --simulation True --simulation_ct "-1" --simulation_num 200
+  python main_matilda_task.py --rna ../data/TEAseq/train_rna.h5 --adt ../data/TEAseq/train_adt.h5 --atac ../data/TEAseq/train_atac.h5 --cty ../data/TEAseq/train_cty.csv --simulation True --simulation_ct -1 --simulation_num 200
 
 Install via pip:
 ::
 
   # Using the trained model for data simulation, example:
-  matilda.main_matilda_task.main_task(rna_path,adt_path,atac_path,cty_path,simulation=True,simulation_ct=-1,simulation_num=200)
+  matilda.main_matilda_task.main_task(rna_path,adt_path,atac_path,cty_path,simulation=True,simulation_ct="-1",simulation_num=200)
 
 
 Output: The output will be saved in `./Matilda/output/simulation_result/TEAseq/reference/`. To generate UMAP plots for the simulated data using R, run `./Matilda/qc/visualize_simulated_data.Rmd`. The UMAPs are:
