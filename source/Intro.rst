@@ -50,7 +50,7 @@ Running Matilda with the example dataset.
 --------------------------------------------------------------------
 
 Data Processing for Unmatched Training and Test Features
-
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
 When processing test datasets with unmatched features, it is important to ensure that the test data aligns with the feature set used in training. One approach is to restrict both datasets to their overlapping features, if available::
 
   library(rhdf5)
