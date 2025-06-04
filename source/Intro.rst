@@ -49,6 +49,46 @@ Training and testing on demo dataset will cost no more than 1 minute with GPU.
 Running Matilda with the example dataset. 
 --------------------------------------------------------------------
 
+Data Processing for Unmatched Training and Test Features
+
+When processing test datasets with unmatched features, it is important to ensure that the test data aligns with the feature set used in training. One approach is to restrict both datasets to their overlapping features, if available::
+
+library(rhdf5)
+train <- h5read("/Matilda/data/TEA-seq/train_rna.h5", "matrix/data")
+train <- t(train)
+colnames(train) <- h5read("/Matilda/data/TEA-seq/train_rna.h5", "matrix/barcodes")
+rownames(train) <- h5read("/Matilda/data/TEA-seq/train_rna.h5", "matrix/features")
+test <- h5read("/Matilda/data/TEA-seq/test_rna.h5", "matrix/data")
+test <- t(test)
+colnames(test) <- h5read("/Matilda/data/TEA-seq/test_rna.h5", "matrix/barcodes")
+rownames(test) <- h5read("/Matilda/data/TEA-seq/test_rna.h5", "matrix/features")
+common_features <- intersect(rownames(train), rownames(test))
+train <- train[common_features, ]
+test <- test[common_features, ]
+
+Alternatively, users can align the test dataset to the feature space of the training data by retaining shared features and imputing missing ones with zeros as a straightforward strategy::
+
+library(rhdf5)
+train <- h5read("/Matilda/data/TEA-seq/train_rna.h5", "matrix/data")
+train <- t(train)
+colnames(train) <- h5read("/Matilda/data/TEA-seq/train_rna.h5", "matrix/barcodes")
+rownames(train) <- h5read("/Matilda/data/TEA-seq/train_rna.h5", "matrix/features")
+test <- h5read("/Matilda/data/TEA-seq/test_rna.h5", "matrix/data")
+test <- t(test)
+colnames(test) <- h5read("/Matilda/data/TEA-seq/test_rna.h5", "matrix/barcodes")
+rownames(test) <- h5read("/Matilda/data/TEA-seq/test_rna.h5", "matrix/features")
+test_aligned <- matrix(0, nrow = nrow(train), ncol = ncol(test))
+rownames(test_aligned) <- rownames(train)
+colnames(test_aligned) <- colnames(test)
+common_features <- intersect(rownames(train), rownames(test))
+test_aligned[common_features, ] <- test[common_features, ]
+test <- test_aligned
+
+
+
+
+
+
 Training the Matilda model.
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
 Install via clonning:
