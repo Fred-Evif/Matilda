@@ -64,5 +64,6 @@ Install pytorch and cuda version based on your GPU settings. ::
    # Example code for installing CUDA 11.3
    conda install pytorch==1.9.1 torchvision==0.10.1 torchaudio==0.9.1 cudatoolkit=11.3 -c pytorch -c conda-forge
 
-
+Note: if you use cpu, then you can use ::
+   conda install pytorch torchvision torchaudio -c pytorch -c conda-forge
 
